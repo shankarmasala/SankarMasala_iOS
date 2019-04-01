@@ -18,6 +18,7 @@ class ProductItemCell: UITableViewCell {
     @IBOutlet weak var btnTitle: UIButton!
     @IBOutlet weak var btnCheckMark: UIButton!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

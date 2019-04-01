@@ -15,6 +15,7 @@ class ProductDetailVC: BaseVC {
     @IBOutlet weak var lblGujratiTitle: UILabel!
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var lblSave: UILabel!
+    var selectedQty : Int = 0
     var attribute : ProductAttribute?
     
     
@@ -95,7 +96,7 @@ extension ProductDetailVC{
     
     @IBAction func addToCartClicked() {
         
-        Cart.addItem(pro: product!, att: attribute!)
+        Cart.addItem(pro: product!, att: attribute!, qtyy: selectedQty)
         let c = Cart.getAll()
         print(c)
     }
@@ -140,6 +141,10 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource{
         }
         cell.btnCheckMark.addTarget(self, action: #selector(selectedCheckmark(btn:)), for: .touchUpInside)
         cell.btnCheckMark.tag = indexPath.row - 1
+        cell.btnPlus.addTarget(self, action: #selector(plusClicked(btn:)), for: .touchUpInside)
+        cell.btnPlus.tag = indexPath.row
+        cell.btnMinus.addTarget(self, action: #selector(minusClicked(btn:)), for: .touchUpInside)
+        cell.btnMinus.tag = indexPath.row
         cell.selectionStyle = .none
         return cell
     }
@@ -152,7 +157,24 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource{
         tblView.deselectRow(at: indexPath, animated: true)
     }
     
+    @objc func plusClicked(btn : UIButton) {
+        let cell : ProductItemCell = tblView.cellForRow(at: NSIndexPath(row: btn.tag, section: 0) as IndexPath) as! ProductItemCell
+        let qty : Int = Int((cell.btnTitle.titleLabel?.text)!)!
+        let showQty : Int = qty + 1
+        cell.btnTitle.setTitle(String(showQty), for: .normal)
+        
+    }
+    @objc func minusClicked(btn : UIButton) {
+        let cell : ProductItemCell = tblView.cellForRow(at: NSIndexPath(row: btn.tag, section: 0) as IndexPath) as! ProductItemCell
+        let qty : Int = Int((cell.btnTitle.titleLabel?.text)!)!
+        let showQty : Int = qty - 1
+        cell.btnTitle.setTitle(String(showQty), for: .normal)
+    }
+    
     @objc func selectedCheckmark(btn : UIButton) {
+        let cell : ProductItemCell = tblView.cellForRow(at: NSIndexPath(row: btn.tag + 1, section: 0) as IndexPath) as! ProductItemCell
+        let qty : Int = Int((cell.btnTitle.titleLabel?.text)!)!
+        selectedQty = qty
         let attributes = product?.product_attribute.allObjects
         let att = attributes![btn.tag]
         attribute = (att as! ProductAttribute)

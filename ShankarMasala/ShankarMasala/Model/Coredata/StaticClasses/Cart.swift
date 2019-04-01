@@ -22,16 +22,16 @@ open class Cart: _Cart {
         return new
     }
     
-    class func addItem(pro : Product , att : ProductAttribute ) {
+    class func addItem(pro : Product , att : ProductAttribute , qtyy : Int? = 1) {
         if ((exitingItem(pro: pro, att: att)) != nil) {
             let cart = Cart.exitingItem(pro: pro, att: att)
-            cart?.qty = NSNumber(value: (cart?.qty?.intValue)! + 1)
+            cart?.qty = NSNumber(value: (cart?.qty?.intValue)! + qtyy!)
             cart?.product = pro
             cart?.productAttribute = att
             cart?.save()
         }else{
             let cart = newEntity()
-            cart?.qty = 1
+            cart?.qty = qtyy! as NSNumber
             cart?.product = pro
             cart?.productAttribute = att
             cart?.save()
