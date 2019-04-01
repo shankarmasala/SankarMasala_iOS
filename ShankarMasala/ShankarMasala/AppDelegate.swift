@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.showLogin()
         }
         
-        showHome()
+      //  showHome()
         
         
         
