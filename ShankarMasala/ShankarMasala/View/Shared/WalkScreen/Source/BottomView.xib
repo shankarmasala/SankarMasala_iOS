@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BottomView" customModule="ShankarMasala" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZAK-6N-Oag">
+                    <rect key="frame" x="168" y="0.0" width="39" height="37"/>
+                    <color key="pageIndicatorTintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="currentPageIndicatorTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </pageControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2h-ct-HHR">
+                    <rect key="frame" x="305" y="1" width="70" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="nfw-UB-KZT"/>
+                        <constraint firstAttribute="width" constant="70" id="wly-61-D4m"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <state key="normal" title="NEXT">
+                        <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egB-IZ-AyQ">
+                    <rect key="frame" x="-66" y="0.0" width="488" height="1"/>
+                    <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="id2-Fa-AIk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="e2h-ct-HHR" secondAttribute="bottom" id="6de-v0-wfH"/>
+                <constraint firstItem="e2h-ct-HHR" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="RkH-Q2-6tH"/>
+                <constraint firstItem="egB-IZ-AyQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-66" id="aq3-v2-B1F"/>
+                <constraint firstItem="ZAK-6N-Oag" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cCE-Ee-E3Z"/>
+                <constraint firstItem="egB-IZ-AyQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ckT-S3-YSq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ZAK-6N-Oag" secondAttribute="bottom" id="o0V-Om-atw"/>
+                <constraint firstAttribute="trailing" secondItem="egB-IZ-AyQ" secondAttribute="trailing" constant="-47" id="roR-Iy-qQy"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="btn" destination="e2h-ct-HHR" id="paE-sg-tah"/>
+                <outlet property="pageControl" destination="ZAK-6N-Oag" id="DTg-f9-Sjo"/>
+            </connections>
+            <point key="canvasLocation" x="-322.39999999999998" y="-14.842578710644679"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="30" id="KGk-i7-Jjw" customClass="OrderHistoryCell" customModule="ShankarMasala" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="29.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0t-9v-8ak">
+                        <rect key="frame" x="0.0" y="1" width="320" height="28"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9mz-Lp-7Pa">
+                                <rect key="frame" x="6" y="6" width="308" height="16"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHi-HC-B8D">
+                                        <rect key="frame" x="0.0" y="0.0" width="51.5" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3g-sZ-f7W">
+                                        <rect key="frame" x="69" y="0.0" width="67" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Pay (Rs.)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKS-k6-eYd">
+                                        <rect key="frame" x="146" y="0.0" width="87" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8b6-Dx-gZc">
+                                        <rect key="frame" x="243" y="0.0" width="39" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye" translatesAutoresizingMaskIntoConstraints="NO" id="cN0-RV-S4L">
+                                        <rect key="frame" x="292" y="0.0" width="16" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="16" id="4RE-Ou-xEr"/>
+                                            <constraint firstAttribute="height" constant="16" id="CKP-oU-m2t"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="N2f-oG-LMl"/>
+                                    <constraint firstAttribute="trailing" secondItem="cN0-RV-S4L" secondAttribute="trailing" id="za7-NE-V1i"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9mz-Lp-7Pa" secondAttribute="trailing" constant="6" id="18N-EF-iaU"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="1iX-5c-Kyr"/>
+                            <constraint firstAttribute="height" constant="28" id="OVf-xi-YUE"/>
+                            <constraint firstItem="9mz-Lp-7Pa" firstAttribute="centerY" secondItem="U0t-9v-8ak" secondAttribute="centerY" id="VtO-bA-6K9"/>
+                            <constraint firstItem="9mz-Lp-7Pa" firstAttribute="leading" secondItem="U0t-9v-8ak" secondAttribute="leading" constant="6" id="yuK-Fr-ZoG"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="U0t-9v-8ak" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="DZz-u5-UPw"/>
+                    <constraint firstItem="U0t-9v-8ak" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KJo-8r-icg"/>
+                    <constraint firstAttribute="trailing" secondItem="U0t-9v-8ak" secondAttribute="trailing" id="ufy-Rt-YOR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <inset key="separatorInset" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="lblOrderId" destination="mHi-HC-B8D" id="HPd-zG-7a9"/>
+                <outlet property="lblOrderdate" destination="i3g-sZ-f7W" id="Wf3-xX-kCO"/>
+                <outlet property="lblStatus" destination="8b6-Dx-gZc" id="uDJ-Cd-XID"/>
+                <outlet property="lblTotalPaid" destination="NKS-k6-eYd" id="Fi4-vp-inE"/>
+            </connections>
+            <point key="canvasLocation" x="379" y="-126"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="eye" width="96" height="60"/>
+    </resources>
+</document>
