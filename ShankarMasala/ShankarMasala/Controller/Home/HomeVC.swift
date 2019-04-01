@@ -42,23 +42,9 @@ class HomeVC: BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         isBackButton = false
         super.viewWillAppear(animated)
-        self.title = "HOME"
-        
-        let btn1 = UIButton(type: .custom)
-        btn1.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-        btn1.setImage(UIImage(named: "notification"), for: .normal)
-        btn1.addTarget(self, action: #selector(self.notification), for: .touchUpInside)
-        let item1 = UIBarButtonItem(customView: btn1)
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        self.navigationItem.setRightBarButtonItems([item1], animated: true)
-      
+        self.title = "HOME"      
     }
     
-   @objc func notification() {
-    let vc = NotificationVC.initViewController()
-    self.navigationController?.pushViewController(vc, animated: true)
-    
-    }
 }
 
 

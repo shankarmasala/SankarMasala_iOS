@@ -106,7 +106,12 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
         
         
     }
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
     
+        let navigation = viewController as! UINavigationController
+        navigation.popToRootViewController(animated: false)
+        // rest of the logic
+    }
     override func viewWillLayoutSubviews() {
 //        var tabFrame = self.tabBar.frame
 //        var aHeight : CGFloat = 60;

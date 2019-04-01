@@ -48,6 +48,12 @@ class CartCell: UITableViewCell {
         btnPlus.layer.borderWidth = 1.0
         gmView.layer.borderColor = UIColor.black.cgColor
         gmView.layer.borderWidth = 1.0
+        if (c.product!.image1?.count)! > 0 {
+            let imagename = c.product!.image1?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+            let url = kBaseUrl + kProductImageLoad + imagename!
+            imgView.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "logo.png"))
+        }
+        
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

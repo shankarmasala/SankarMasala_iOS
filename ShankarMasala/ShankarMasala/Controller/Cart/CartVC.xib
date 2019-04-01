@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CartVC" customModule="ShankarMasala" customModuleProvider="target">
             <connections>
+                <outlet property="btnTotal" destination="0HR-wd-3I9" id="vIi-5B-4Df"/>
                 <outlet property="tblView" destination="dce-2L-0h4" id="Oti-cv-Wfw"/>
                 <outlet property="view" destination="uZR-NL-ZcO" id="sth-X9-7gW"/>
             </connections>
@@ -32,20 +33,27 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cao-Cw-lqt">
                     <rect key="frame" x="0.0" y="440" width="320" height="40"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add More Item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phc-nX-rCR">
-                            <rect key="frame" x="0.0" y="0.0" width="159.5" height="40"/>
-                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XI7-SV-VBS">
+                            <rect key="frame" x="0.0" y="0.0" width="159.5" height="40"/>
+                            <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Add More Item">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="addMoreClicked" destination="-1" eventType="touchUpInside" id="FML-4I-Ni8"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TF1-dC-djl">
                             <rect key="frame" x="160.5" y="0.0" width="159.5" height="40"/>
                             <color key="backgroundColor" red="0.88235294119999996" green="0.24313725489999999" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <state key="normal" title="Next">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="nextClicked" destination="-1" eventType="touchUpInside" id="RHM-Wa-dE9"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
@@ -92,7 +100,7 @@
                 <constraint firstItem="dce-2L-0h4" firstAttribute="top" secondItem="PGQ-yR-yax" secondAttribute="top" constant="5" id="xm3-19-RPZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="PGQ-yR-yax"/>
-            <point key="canvasLocation" x="24.375" y="-301.25"/>
+            <point key="canvasLocation" x="-388" y="-279"/>
         </view>
     </objects>
 </document>

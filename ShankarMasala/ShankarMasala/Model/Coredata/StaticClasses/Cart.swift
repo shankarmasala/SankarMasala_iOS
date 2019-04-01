@@ -93,3 +93,15 @@ open class Cart: _Cart {
          NotificationCenter.default.post(name: NSNotification.Name("update_cart_count"), object: nil)
     }
 }
+
+extension Cart{
+   class func getTotal() -> Float {
+        var total : Float = 0
+        let arr = Cart.getAll()
+        for c in arr! {
+            let qty : Float = (c.qty?.floatValue)!
+            total = total + ((c.productAttribute?.selling_price?.floatValue)! * qty)
+        }
+        return total
+    }
+}

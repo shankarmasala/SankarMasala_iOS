@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotificationVC: BaseVC {
+class NotificationVC: UIViewController {
     
     var arrary : [String] = [String]()
     @IBOutlet weak var tblView : UITableView!
@@ -20,8 +20,16 @@ class NotificationVC: BaseVC {
     }
     
     override func viewDidLoad() {
-        self.isBackButton = true
+        
         super.viewDidLoad()
+        let btn1 = UIButton(type: .custom)
+        btn1.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        btn1.setImage(UIImage(named: "image_back"), for: .normal)
+        btn1.addTarget(self, action: #selector(self.backClicked), for: .touchUpInside)
+        let item1 = UIBarButtonItem(customView: btn1)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationItem.setLeftBarButtonItems([item1], animated: true)
+        
         arrary.append("A")
         arrary.append("A")
         arrary.append("A")
@@ -48,7 +56,9 @@ class NotificationVC: BaseVC {
         // Do any additional setup after loading the view.
     }
     
-    
+    @objc func backClicked() {
+        self.navigationController?.popViewController(animated: true)
+    }
     /*
      // MARK: - Navigation
      

@@ -13,6 +13,7 @@ class CartVC: BaseVC {
     var arrary : [Cart] = [Cart]()
     
     @IBOutlet weak var tblView : UITableView!
+    @IBOutlet weak var btnTotal : UIButton!
     
     class func initViewController() -> CartVC{
         let vc = CartVC(nibName: "CartVC", bundle: nil)
@@ -27,7 +28,7 @@ class CartVC: BaseVC {
     
         
         arrary = Cart.getAll()!
-        tblView.reloadData()
+        self.updateCart()
         tblView.tableFooterView = UIView()
         tblView.register(UINib(nibName: "CartCell", bundle: nil), forCellReuseIdentifier: "CartCell")
         
@@ -39,6 +40,8 @@ class CartVC: BaseVC {
     @objc func updateCart() {
         arrary = Cart.getAll()!
         tblView.reloadData()
+        let str = "Rs.\(Cart.getTotal())"
+        btnTotal.setTitle(str, for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -114,4 +117,16 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource{
         c.delete()
         
     }
+    
+    @IBAction func addMoreClicked(){
+        //let nav: UINavigationController = (self.navigationController as? UINavigationController)!
+        //nav.popToRootViewController(animated: false)
+        self.tabBarController?.selectedIndex = 0
+    }
+    @IBAction func nextClicked(){
+        
+        
+    }
+
+    
 }

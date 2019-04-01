@@ -71,8 +71,6 @@
 		14869635223E15F300220954 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14869634223E15F300220954 /* BaseVC.swift */; };
 		14869638223E1FF200220954 /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14869636223E1FF200220954 /* AboutUsVC.swift */; };
 		14869639223E1FF200220954 /* AboutUsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14869637223E1FF200220954 /* AboutUsVC.xib */; };
-		148C1C6022511A8200DCC39F /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 148C1C4922511A8200DCC39F /* LICENSE */; };
-		148C1C6122511A8200DCC39F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 148C1C4A22511A8200DCC39F /* README.md */; };
 		148C1C6222511A8200DCC39F /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 148C1C4E22511A8200DCC39F /* ActionSheetDatePicker.m */; };
 		148C1C6322511A8200DCC39F /* ActionSheetLocalePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 148C1C5022511A8200DCC39F /* ActionSheetLocalePicker.m */; };
 		148C1C6422511A8200DCC39F /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 148C1C5422511A8200DCC39F /* ActionSheetDistancePicker.m */; };
@@ -228,8 +226,6 @@
 		14869634223E15F300220954 /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseVC.swift; path = ShankarMasala/Controller/BaseVC.swift; sourceTree = SOURCE_ROOT; };
 		14869636223E1FF200220954 /* AboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
 		14869637223E1FF200220954 /* AboutUsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutUsVC.xib; sourceTree = "<group>"; };
-		148C1C4922511A8200DCC39F /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		148C1C4A22511A8200DCC39F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		148C1C4C22511A8200DCC39F /* ActionSheetCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPicker.h; sourceTree = "<group>"; };
 		148C1C4D22511A8200DCC39F /* ActionSheetStringPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetStringPicker.h; sourceTree = "<group>"; };
 		148C1C4E22511A8200DCC39F /* ActionSheetDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDatePicker.m; sourceTree = "<group>"; };
@@ -423,8 +419,6 @@
 		148C1C4822511A8200DCC39F /* ActionSheetPicker-3.0 */ = {
 			isa = PBXGroup;
 			children = (
-				148C1C4922511A8200DCC39F /* LICENSE */,
-				148C1C4A22511A8200DCC39F /* README.md */,
 				148C1C4B22511A8200DCC39F /* Pickers */,
 			);
 			path = "ActionSheetPicker-3.0";
@@ -1050,14 +1044,12 @@
 				1420E95A223C13F1000CD4D8 /* BottomView.xib in Resources */,
 				14492C232243EA57004FFE9E /* OrderProductCell.xib in Resources */,
 				14F724382245DA3600FFAB5B /* ShippingDetailVC.xib in Resources */,
-				148C1C6122511A8200DCC39F /* README.md in Resources */,
 				14956BF7223D4E5C00945EA1 /* CartVC.xib in Resources */,
 				14956BF3223D4E4900945EA1 /* CategoryVC.xib in Resources */,
 				14869639223E1FF200220954 /* AboutUsVC.xib in Resources */,
 				14B746FA223E6645007AE4BD /* NSDateTimeAgo.bundle in Resources */,
 				14956C10223D619600945EA1 /* LICENSE in Resources */,
 				14F9EB0322434254001F3E40 /* CategoryFullRowCollectionViewCell.xib in Resources */,
-				148C1C6022511A8200DCC39F /* LICENSE in Resources */,
 				14F69841224953B10081150C /* ProductItemTitleCell.xib in Resources */,
 				14158C812246995E00188EB0 /* ShippingDetailSecondsCell.xib in Resources */,
 				14158C7D2246926E00188EB0 /* ShippingDetailFirstCell.xib in Resources */,
@@ -1435,7 +1427,8 @@
 			baseConfigurationReference = D688C218B4C23AD457EC8F91 /* Pods-ShankarMasala.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ShankarMasala/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1444,6 +1437,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.ShankarMasala;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ShankarMasala/Model/Shared/Header.h;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1455,7 +1449,8 @@
 			baseConfigurationReference = E684FC132143788EE401CCC8 /* Pods-ShankarMasala.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ShankarMasala/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1464,6 +1459,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.ShankarMasala;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = ShankarMasala/Model/Shared/Header.h;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
