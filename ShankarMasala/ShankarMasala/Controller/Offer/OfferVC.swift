@@ -10,7 +10,7 @@ import UIKit
 
 class OfferVC: BaseVC {
     
-    var arrary : [String] = [String]()
+    var arrProduct : [Product] = [Product]()
     @IBOutlet weak var tblView : UITableView!
     
     class func initViewController() -> OfferVC {
@@ -22,24 +22,18 @@ class OfferVC: BaseVC {
     override func viewDidLoad() {
         self.isBackButton = false
         super.viewDidLoad()
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
+        
+        LoaderView.displaySpinner()
+        Manager.loadAllProductByCategory { (result, message) -> (Void) in
+            LoaderView.removeSpinner()
+            if message.count > 0 {
+                Utils.showAlert(withMessage: message)
+                return
+            }
+            self.arrProduct = Product.getOfferAll()!
+            self.tblView.reloadData()
+            
+        }
         
         tblView.tableFooterView = UIView()
         tblView.register(UINib(nibName: "OfferCell", bundle: nil), forCellReuseIdentifier: "OfferCell")
@@ -71,14 +65,12 @@ class OfferVC: BaseVC {
 extension OfferVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.arrary.count
+        return self.arrProduct.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : OfferCell = tableView.dequeueReusableCell(withIdentifier: "OfferCell", for: indexPath) as! OfferCell
-       // cell.lblStatus.text = "Pending"
-        //cell.lblOrderId.text = "1234"
-        //cell.lblOrderdate.text = "12-12-1989"
-        //cell.lblTotalPaid.text = "$12,000"
+         let pro = self.arrProduct[indexPath.row]
+        cell.setData(pro: pro)
         cell.selectionStyle = .none
         return cell
     }
@@ -89,8 +81,9 @@ extension OfferVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tblView.deselectRow(at: indexPath, animated: true)
-       // let vc = OrderProductVC.initViewController()
-        //self.navigationController?.pushViewController(vc, animated: true)
+        let pro = self.arrProduct[indexPath.row]
+        let vc = ProductDetailVC.initViewController(pro: pro)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     

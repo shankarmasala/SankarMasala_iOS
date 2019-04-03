@@ -17,12 +17,22 @@ class ProductDetailVC: BaseVC {
     @IBOutlet weak var lblSave: UILabel!
     var selectedQty : Int = 0
     var attribute : ProductAttribute?
+    var category : Categori?
     
+    
+    
+    class func initViewController(pro : Product,cat : Categori) -> ProductDetailVC{
+        let vc = ProductDetailVC(nibName: "ProductDetailVC", bundle: nil)
+        vc.product = pro
+        vc.category = cat
+        return vc
+    }
     
     
     class func initViewController(pro : Product) -> ProductDetailVC{
         let vc = ProductDetailVC(nibName: "ProductDetailVC", bundle: nil)
         vc.product = pro
+       // vc.category = cat
         return vc
     }
     

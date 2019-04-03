@@ -66,6 +66,14 @@
 		14492C232243EA57004FFE9E /* OrderProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14492C212243EA57004FFE9E /* OrderProductCell.xib */; };
 		1461E0542245507B0063EB14 /* ContactUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1461E0522245507B0063EB14 /* ContactUsVC.swift */; };
 		1461E0552245507B0063EB14 /* ContactUsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1461E0532245507B0063EB14 /* ContactUsVC.xib */; };
+		1464778D22545CD300D997C4 /* DeliveryTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1464778B22545CD300D997C4 /* DeliveryTypeViewController.xib */; };
+		1464778E22545CD300D997C4 /* DeliveryTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464778C22545CD300D997C4 /* DeliveryTypeViewController.swift */; };
+		1464779222545CDC00D997C4 /* SelectBranchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464779022545CDC00D997C4 /* SelectBranchViewController.swift */; };
+		1464779322545CDC00D997C4 /* SelectBranchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1464779122545CDC00D997C4 /* SelectBranchViewController.xib */; };
+		1464779822545CFA00D997C4 /* PersonalInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464779422545CFA00D997C4 /* PersonalInfoTableViewCell.swift */; };
+		1464779922545CFA00D997C4 /* BranchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1464779522545CFA00D997C4 /* BranchTableViewCell.xib */; };
+		1464779A22545CFA00D997C4 /* PersonalInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1464779622545CFA00D997C4 /* PersonalInfoTableViewCell.xib */; };
+		1464779B22545CFA00D997C4 /* BranchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464779722545CFA00D997C4 /* BranchTableViewCell.swift */; };
 		1475516A22415A6A00B1EF01 /* ShankarMasala.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1475516822415A6A00B1EF01 /* ShankarMasala.xcdatamodeld */; };
 		14855A7222400BD7006E985B /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14855A7122400BD6006E985B /* LoaderView.swift */; };
 		14869635223E15F300220954 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14869634223E15F300220954 /* BaseVC.swift */; };
@@ -223,6 +231,14 @@
 		14492C212243EA57004FFE9E /* OrderProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderProductCell.xib; sourceTree = "<group>"; };
 		1461E0522245507B0063EB14 /* ContactUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsVC.swift; sourceTree = "<group>"; };
 		1461E0532245507B0063EB14 /* ContactUsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactUsVC.xib; sourceTree = "<group>"; };
+		1464778B22545CD300D997C4 /* DeliveryTypeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeliveryTypeViewController.xib; sourceTree = "<group>"; };
+		1464778C22545CD300D997C4 /* DeliveryTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryTypeViewController.swift; sourceTree = "<group>"; };
+		1464779022545CDC00D997C4 /* SelectBranchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectBranchViewController.swift; sourceTree = "<group>"; };
+		1464779122545CDC00D997C4 /* SelectBranchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectBranchViewController.xib; sourceTree = "<group>"; };
+		1464779422545CFA00D997C4 /* PersonalInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalInfoTableViewCell.swift; sourceTree = "<group>"; };
+		1464779522545CFA00D997C4 /* BranchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BranchTableViewCell.xib; sourceTree = "<group>"; };
+		1464779622545CFA00D997C4 /* PersonalInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalInfoTableViewCell.xib; sourceTree = "<group>"; };
+		1464779722545CFA00D997C4 /* BranchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchTableViewCell.swift; sourceTree = "<group>"; };
 		1475516922415A6A00B1EF01 /* ShankarMasala.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShankarMasala.xcdatamodel; sourceTree = "<group>"; };
 		14855A7122400BD6006E985B /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		14869634223E15F300220954 /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseVC.swift; path = ShankarMasala/Controller/BaseVC.swift; sourceTree = SOURCE_ROOT; };
@@ -420,6 +436,24 @@
 			path = Extra;
 			sourceTree = "<group>";
 		};
+		1464778A22545CD300D997C4 /* Select Delivery Type */ = {
+			isa = PBXGroup;
+			children = (
+				1464778B22545CD300D997C4 /* DeliveryTypeViewController.xib */,
+				1464778C22545CD300D997C4 /* DeliveryTypeViewController.swift */,
+			);
+			path = "Select Delivery Type";
+			sourceTree = "<group>";
+		};
+		1464778F22545CDC00D997C4 /* Select Branch */ = {
+			isa = PBXGroup;
+			children = (
+				1464779022545CDC00D997C4 /* SelectBranchViewController.swift */,
+				1464779122545CDC00D997C4 /* SelectBranchViewController.xib */,
+			);
+			path = "Select Branch";
+			sourceTree = "<group>";
+		};
 		148C1C4822511A8200DCC39F /* ActionSheetPicker-3.0 */ = {
 			isa = PBXGroup;
 			children = (
@@ -549,6 +583,10 @@
 		14956C00223D559E00945EA1 /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
+				1464779722545CFA00D997C4 /* BranchTableViewCell.swift */,
+				1464779522545CFA00D997C4 /* BranchTableViewCell.xib */,
+				1464779422545CFA00D997C4 /* PersonalInfoTableViewCell.swift */,
+				1464779622545CFA00D997C4 /* PersonalInfoTableViewCell.xib */,
 				14492C0E2243A43F004FFE9E /* masala.jpg */,
 				14956C03223D55CB00945EA1 /* MenuViewCell.swift */,
 				14956C01223D55C500945EA1 /* MenuViewCell.xib */,
@@ -824,6 +862,8 @@
 		14D44C8F223ABC04000AC818 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1464778F22545CDC00D997C4 /* Select Branch */,
+				1464778A22545CD300D997C4 /* Select Delivery Type */,
 				1461E04D22454C5F0063EB14 /* Extra */,
 				14B7468A223E4F7F007AE4BD /* OrderHistory */,
 				14956BFF223D552700945EA1 /* Menu */,
@@ -1034,6 +1074,7 @@
 				14B74689223E412B007AE4BD /* NotificationCell.xib in Resources */,
 				142BB41022477B3100701EF6 /* ProductItemCell.xib in Resources */,
 				14B81082225304A500241AE2 /* CancelOrderVC.xib in Resources */,
+				1464778D22545CD300D997C4 /* DeliveryTypeViewController.xib in Resources */,
 				14492C132243AEAC004FFE9E /* ProductCollectionViewCell.xib in Resources */,
 				14492C1B2243B7BE004FFE9E /* ProductVC.xib in Resources */,
 				14B7470E223E6645007AE4BD /* Mapping.plist in Resources */,
@@ -1050,6 +1091,7 @@
 				14D44C85223ABBA8000AC818 /* Assets.xcassets in Resources */,
 				1420E95A223C13F1000CD4D8 /* BottomView.xib in Resources */,
 				14492C232243EA57004FFE9E /* OrderProductCell.xib in Resources */,
+				1464779922545CFA00D997C4 /* BranchTableViewCell.xib in Resources */,
 				14F724382245DA3600FFAB5B /* ShippingDetailVC.xib in Resources */,
 				14956BF7223D4E5C00945EA1 /* CartVC.xib in Resources */,
 				14956BF3223D4E4900945EA1 /* CategoryVC.xib in Resources */,
@@ -1058,6 +1100,7 @@
 				14956C10223D619600945EA1 /* LICENSE in Resources */,
 				14F9EB0322434254001F3E40 /* CategoryFullRowCollectionViewCell.xib in Resources */,
 				14F69841224953B10081150C /* ProductItemTitleCell.xib in Resources */,
+				1464779A22545CFA00D997C4 /* PersonalInfoTableViewCell.xib in Resources */,
 				14158C812246995E00188EB0 /* ShippingDetailSecondsCell.xib in Resources */,
 				14158C7D2246926E00188EB0 /* ShippingDetailFirstCell.xib in Resources */,
 				14956BE7223D4DF200945EA1 /* HomeVC.xib in Resources */,
@@ -1065,6 +1108,7 @@
 				14956BEB223D4E1000945EA1 /* OfferVC.xib in Resources */,
 				14B74685223E4001007AE4BD /* NotificationVC.xib in Resources */,
 				142BB40C22475E8F00701EF6 /* ProductDetailVC.xib in Resources */,
+				1464779322545CDC00D997C4 /* SelectBranchViewController.xib in Resources */,
 				14956BEF223D4E2F00945EA1 /* SearchVC.xib in Resources */,
 				1461E0552245507B0063EB14 /* ContactUsVC.xib in Resources */,
 			);
@@ -1174,6 +1218,7 @@
 				148C1C6822511A8200DCC39F /* DistancePickerView.m in Sources */,
 				14D44C7E223ABBA6000AC818 /* AppDelegate.swift in Sources */,
 				14956BEE223D4E2F00945EA1 /* SearchVC.swift in Sources */,
+				1464779B22545CFA00D997C4 /* BranchTableViewCell.swift in Sources */,
 				14B74695223E606D007AE4BD /* ProfileVC.swift in Sources */,
 				14B74704223E6645007AE4BD /* NSDate+Extentsion.m in Sources */,
 				14F7242E2245C84A00FFAB5B /* CollapsibleTableViewHeader.swift in Sources */,
@@ -1243,6 +1288,7 @@
 				14956C11223D619600945EA1 /* SlideMenuController.swift in Sources */,
 				1427CC84223CFF0B0073E3D8 /* VPMOTPView.swift in Sources */,
 				14B746EC223E6645007AE4BD /* TranslateStrings.swift in Sources */,
+				1464779222545CDC00D997C4 /* SelectBranchViewController.swift in Sources */,
 				14956C07223D55D200945EA1 /* MenuVC.swift in Sources */,
 				14F724242245C5EC00FFAB5B /* ShppingChargesVC.swift in Sources */,
 				1420E958223C13DA000CD4D8 /* BottomView.swift in Sources */,
@@ -1269,6 +1315,7 @@
 				142BB40B22475E8F00701EF6 /* ProductDetailVC.swift in Sources */,
 				1475516A22415A6A00B1EF01 /* ShankarMasala.xcdatamodeld in Sources */,
 				14D44CA4223AC909000AC818 /* Array+Sugar.swift in Sources */,
+				1464779822545CFA00D997C4 /* PersonalInfoTableViewCell.swift in Sources */,
 				14CEAA69224C6E6D002598B0 /* OfferCell.swift in Sources */,
 				14B746F4223E6645007AE4BD /* NSManagedObject+Mapping.m in Sources */,
 				14492C222243EA57004FFE9E /* OrderProductCell.swift in Sources */,
@@ -1281,6 +1328,7 @@
 				14B746EE223E6645007AE4BD /* UDClass.swift in Sources */,
 				14B74711223E6645007AE4BD /* Manager.swift in Sources */,
 				14F724302245C84A00FFAB5B /* ExampleData.swift in Sources */,
+				1464778E22545CD300D997C4 /* DeliveryTypeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

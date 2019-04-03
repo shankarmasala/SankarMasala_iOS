@@ -22,14 +22,15 @@
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RmJ-Jz-74R">
                         <rect key="frame" x="6" y="11" width="308" height="22"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRB-8D-hft">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRB-8D-hft">
                                 <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
-                                <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="E4K-oW-hMq"/>
                                     <constraint firstAttribute="width" constant="22" id="Spz-79-FXd"/>
                                 </constraints>
-                                <state key="selected" title="V"/>
+                                <state key="normal" image="uncheckMark"/>
+                                <state key="selected" title="V" image="checkMark"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100gm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVF-VD-mtb">
                                 <rect key="frame" x="57.5" y="0.0" width="44.5" height="22"/>
@@ -126,7 +127,9 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="checkMark" width="153.19148254394531" height="153.19148254394531"/>
         <image name="minus" width="15" height="15"/>
         <image name="plus" width="15" height="15"/>
+        <image name="uncheckMark" width="153.19148254394531" height="153.19148254394531"/>
     </resources>
 </document>

@@ -29,13 +29,13 @@ class ProductVC: BaseVC {
     
         
         LoaderView.displaySpinner()
-        Manager.loadAllProductByCategory(cat: category!) { (result, message) -> (Void) in
+        Manager.loadAllProductByCategory { (result, message) -> (Void) in
             LoaderView.removeSpinner()
             if message.count > 0 {
                 Utils.showAlert(withMessage: message)
                 return
             }
-            self.arrProduct = Product.getAll()!
+            self.arrProduct = Product.getAllByCategory(cat: self.category!)!
             self.collection.reloadData()
             
         }
@@ -89,7 +89,7 @@ extension ProductVC : UICollectionViewDelegate, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
          let pro = self.arrProduct[indexPath.row]
-        let vc = ProductDetailVC.initViewController(pro: pro)
+        let vc = ProductDetailVC.initViewController(pro: pro, cat: category!)
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

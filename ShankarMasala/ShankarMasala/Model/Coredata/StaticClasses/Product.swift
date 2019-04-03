@@ -16,6 +16,16 @@ open class Product: _Product {
         return Product.mr_findAllSorted(by: "entityid", ascending: true) as? [Product]
     }
     
+    class func getOfferAll() -> [Product]? {
+        let pre = NSPredicate(format: "is_offer == 1")
+        return Product.mr_findAllSorted(by: "entityid", ascending: true, with: pre) as? [Product]
+    }
+    
+    class func getAllByCategory(cat : Categori) -> [Product]? {
+        let pre = NSPredicate(format: "category_id == %@",cat.entityid!)
+        return Product.mr_findAllSorted(by: "entityid", ascending: true, with: pre) as? [Product]
+    }
+    
     class func newEntity() -> Product? {
         let new = Product.mr_createEntity(in: NSManagedObjectContext.mr_default())
         return new

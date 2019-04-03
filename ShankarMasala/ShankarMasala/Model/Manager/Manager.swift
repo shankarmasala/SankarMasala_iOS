@@ -96,7 +96,7 @@ extension Manager {
         request.startRequest()
     }
     
-    class func loadAllProductByCategory(cat : Categori , block : @escaping ItemLoadedBlock) {
+    class func loadAllProductByCategory(block : @escaping ItemLoadedBlock) {
         let request = Request.init(url: "\(kBaseUrl)\(kAllProduct)", method: RequestMethod(rawValue: "POST")!) { (success:Bool, request:Request, message:NSString) -> (Void) in
             if request.isSuccess {
                 let arr = request.serverData["data"] as! [[String : Any]]
@@ -119,12 +119,12 @@ extension Manager {
                 }
             }
         }
-        let categoryid = "\(String(describing: cat.entityid!))"
-        request.setParameter(categoryid, forKey: "categoryId")
+//        let categoryid = "\(String(describing: cat.entityid!))"
+//        request.setParameter(categoryid, forKey: "categoryId")
         request.startRequest()
     }
     
-    
+
     class func loadProductByProductName(productname : String , block : @escaping ItemLoadedBlock) {
         let request = Request.init(url: "\(kBaseUrl)\(kSearchProduct)", method: RequestMethod(rawValue: "POST")!) { (success:Bool, request:Request, message:NSString) -> (Void) in
             if request.isSuccess {

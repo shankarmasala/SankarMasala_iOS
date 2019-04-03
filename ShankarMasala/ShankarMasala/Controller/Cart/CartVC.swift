@@ -124,7 +124,8 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource{
         self.tabBarController?.selectedIndex = 0
     }
     @IBAction func nextClicked(){
-        
+        let vc = DeliveryTypeViewController.initViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
 
