@@ -103,6 +103,9 @@ extension ProductDetailVC{
     
     @IBAction func BuyClicked() {
         
+        let vc = DeliveryTypeViewController.initViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     @IBAction func zoomClicked(){
