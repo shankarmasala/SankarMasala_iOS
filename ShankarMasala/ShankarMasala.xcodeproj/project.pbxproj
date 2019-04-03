@@ -22,6 +22,14 @@
 
 /* Begin PBXBuildFile section */
 		007ACA1C2F5335A6ADE172CB /* Pods_ShankarMasala.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6CC29982C0DD0240397B98 /* Pods_ShankarMasala.framework */; };
+		0973298F2253D0A20025234A /* SelectBranchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973298D2253D0A20025234A /* SelectBranchViewController.swift */; };
+		097329902253D0A20025234A /* SelectBranchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0973298E2253D0A20025234A /* SelectBranchViewController.xib */; };
+		097329952253D4760025234A /* BranchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097329932253D4760025234A /* BranchTableViewCell.swift */; };
+		097329962253D4760025234A /* BranchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097329942253D4760025234A /* BranchTableViewCell.xib */; };
+		09732999225452FC0025234A /* PersonalInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09732997225452FC0025234A /* PersonalInfoTableViewCell.swift */; };
+		0973299A225452FC0025234A /* PersonalInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09732998225452FC0025234A /* PersonalInfoTableViewCell.xib */; };
+		09AB84BD2252918A00B3291B /* DeliveryTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB84BB2252918A00B3291B /* DeliveryTypeViewController.swift */; };
+		09AB84BE2252918A00B3291B /* DeliveryTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09AB84BC2252918A00B3291B /* DeliveryTypeViewController.xib */; };
 		14089BFB224FC72B00B404DC /* _CountryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14089BFA224FC72B00B404DC /* _CountryObject.swift */; };
 		14089BFD224FC73600B404DC /* CountryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14089BFC224FC73600B404DC /* CountryObject.swift */; };
 		14158C7C2246926E00188EB0 /* ShippingDetailFirstCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14158C7A2246926E00188EB0 /* ShippingDetailFirstCell.swift */; };
@@ -177,6 +185,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0973298D2253D0A20025234A /* SelectBranchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBranchViewController.swift; sourceTree = "<group>"; };
+		0973298E2253D0A20025234A /* SelectBranchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectBranchViewController.xib; sourceTree = "<group>"; };
+		097329932253D4760025234A /* BranchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchTableViewCell.swift; sourceTree = "<group>"; };
+		097329942253D4760025234A /* BranchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BranchTableViewCell.xib; sourceTree = "<group>"; };
+		09732997225452FC0025234A /* PersonalInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoTableViewCell.swift; sourceTree = "<group>"; };
+		09732998225452FC0025234A /* PersonalInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalInfoTableViewCell.xib; sourceTree = "<group>"; };
+		09AB84BB2252918A00B3291B /* DeliveryTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTypeViewController.swift; sourceTree = "<group>"; };
+		09AB84BC2252918A00B3291B /* DeliveryTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeliveryTypeViewController.xib; sourceTree = "<group>"; };
 		14089BFA224FC72B00B404DC /* _CountryObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _CountryObject.swift; sourceTree = "<group>"; };
 		14089BFC224FC73600B404DC /* CountryObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountryObject.swift; path = ShankarMasala/Model/Coredata/StaticClasses/CountryObject.swift; sourceTree = SOURCE_ROOT; };
 		14158C7A2246926E00188EB0 /* ShippingDetailFirstCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingDetailFirstCell.swift; sourceTree = "<group>"; };
@@ -379,6 +395,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0973298C2253D0820025234A /* Select Branch */ = {
+			isa = PBXGroup;
+			children = (
+				0973298D2253D0A20025234A /* SelectBranchViewController.swift */,
+				0973298E2253D0A20025234A /* SelectBranchViewController.xib */,
+			);
+			path = "Select Branch";
+			sourceTree = "<group>";
+		};
+		09AB84BA2252916500B3291B /* Select Delivery Type */ = {
+			isa = PBXGroup;
+			children = (
+				09AB84BB2252918A00B3291B /* DeliveryTypeViewController.swift */,
+				09AB84BC2252918A00B3291B /* DeliveryTypeViewController.xib */,
+			);
+			path = "Select Delivery Type";
+			sourceTree = "<group>";
+		};
 		1427CC77223CFC7C0073E3D8 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -568,6 +602,10 @@
 				14F6983F224953B10081150C /* ProductItemTitleCell.xib */,
 				14CEAA67224C6E6D002598B0 /* OfferCell.swift */,
 				14CEAA68224C6E6D002598B0 /* OfferCell.xib */,
+				097329932253D4760025234A /* BranchTableViewCell.swift */,
+				097329942253D4760025234A /* BranchTableViewCell.xib */,
+				09732997225452FC0025234A /* PersonalInfoTableViewCell.swift */,
+				09732998225452FC0025234A /* PersonalInfoTableViewCell.xib */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -818,6 +856,8 @@
 		14D44C8F223ABC04000AC818 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0973298C2253D0820025234A /* Select Branch */,
+				09AB84BA2252916500B3291B /* Select Delivery Type */,
 				1461E04D22454C5F0063EB14 /* Extra */,
 				14B7468A223E4F7F007AE4BD /* OrderHistory */,
 				14956BFF223D552700945EA1 /* Menu */,
@@ -1029,6 +1069,7 @@
 				142BB41022477B3100701EF6 /* ProductItemCell.xib in Resources */,
 				14492C132243AEAC004FFE9E /* ProductCollectionViewCell.xib in Resources */,
 				14492C1B2243B7BE004FFE9E /* ProductVC.xib in Resources */,
+				097329962253D4760025234A /* BranchTableViewCell.xib in Resources */,
 				14B7470E223E6645007AE4BD /* Mapping.plist in Resources */,
 				14B7468E223E4F9E007AE4BD /* OrderHistoryVC.xib in Resources */,
 				14F724252245C5EC00FFAB5B /* ShppingChargesVC.xib in Resources */,
@@ -1040,12 +1081,15 @@
 				14D44C97223ABE36000AC818 /* WalkScreenVC.xib in Resources */,
 				14B74692223E503E007AE4BD /* OrderHistoryCell.xib in Resources */,
 				14956C08223D55D200945EA1 /* MenuVC.xib in Resources */,
+				097329902253D0A20025234A /* SelectBranchViewController.xib in Resources */,
 				14D44C85223ABBA8000AC818 /* Assets.xcassets in Resources */,
 				1420E95A223C13F1000CD4D8 /* BottomView.xib in Resources */,
 				14492C232243EA57004FFE9E /* OrderProductCell.xib in Resources */,
+				0973299A225452FC0025234A /* PersonalInfoTableViewCell.xib in Resources */,
 				14F724382245DA3600FFAB5B /* ShippingDetailVC.xib in Resources */,
 				14956BF7223D4E5C00945EA1 /* CartVC.xib in Resources */,
 				14956BF3223D4E4900945EA1 /* CategoryVC.xib in Resources */,
+				09AB84BE2252918A00B3291B /* DeliveryTypeViewController.xib in Resources */,
 				14869639223E1FF200220954 /* AboutUsVC.xib in Resources */,
 				14B746FA223E6645007AE4BD /* NSDateTimeAgo.bundle in Resources */,
 				14956C10223D619600945EA1 /* LICENSE in Resources */,
@@ -1162,6 +1206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09AB84BD2252918A00B3291B /* DeliveryTypeViewController.swift in Sources */,
 				141D9968224FBDE40067969A /* _Categori.swift in Sources */,
 				14F7242F2245C84A00FFAB5B /* CollapsibleTableViewController.swift in Sources */,
 				148C1C6822511A8200DCC39F /* DistancePickerView.m in Sources */,
@@ -1170,6 +1215,7 @@
 				14B74695223E606D007AE4BD /* ProfileVC.swift in Sources */,
 				14B74704223E6645007AE4BD /* NSDate+Extentsion.m in Sources */,
 				14F7242E2245C84A00FFAB5B /* CollapsibleTableViewHeader.swift in Sources */,
+				0973298F2253D0A20025234A /* SelectBranchViewController.swift in Sources */,
 				14D44C96223ABE36000AC818 /* WalkScreenVC.swift in Sources */,
 				1427CC7E223CFCAE0073E3D8 /* LoginVC.swift in Sources */,
 				141D9977224FBE270067969A /* ShippingMethods.swift in Sources */,
@@ -1261,12 +1307,14 @@
 				142BB40B22475E8F00701EF6 /* ProductDetailVC.swift in Sources */,
 				1475516A22415A6A00B1EF01 /* ShankarMasala.xcdatamodeld in Sources */,
 				14D44CA4223AC909000AC818 /* Array+Sugar.swift in Sources */,
+				09732999225452FC0025234A /* PersonalInfoTableViewCell.swift in Sources */,
 				14CEAA69224C6E6D002598B0 /* OfferCell.swift in Sources */,
 				14B746F4223E6645007AE4BD /* NSManagedObject+Mapping.m in Sources */,
 				14492C222243EA57004FFE9E /* OrderProductCell.swift in Sources */,
 				14B74708223E6645007AE4BD /* CDHelper.swift in Sources */,
 				14B746F0223E6645007AE4BD /* NotificationCenterConstants.swift in Sources */,
 				14F69840224953B10081150C /* ProductItemTitleCell.swift in Sources */,
+				097329952253D4760025234A /* BranchTableViewCell.swift in Sources */,
 				148C1C6922511A8200DCC39F /* ActionSheetMultipleStringPicker.m in Sources */,
 				141D997B224FBE270067969A /* Cart.swift in Sources */,
 				14D44CA3223AC909000AC818 /* PagesController.swift in Sources */,
