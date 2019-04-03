@@ -147,6 +147,8 @@
 		14B7470F223E6645007AE4BD /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B746E1223E6645007AE4BD /* AccountManager.swift */; };
 		14B74710223E6645007AE4BD /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B746E2223E6645007AE4BD /* Account.swift */; };
 		14B74711223E6645007AE4BD /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B746E4223E6645007AE4BD /* Manager.swift */; };
+		14B81081225304A500241AE2 /* CancelOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B8107F225304A500241AE2 /* CancelOrderVC.swift */; };
+		14B81082225304A500241AE2 /* CancelOrderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B81080225304A500241AE2 /* CancelOrderVC.xib */; };
 		14CEAA69224C6E6D002598B0 /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CEAA67224C6E6D002598B0 /* OfferCell.swift */; };
 		14CEAA6A224C6E6D002598B0 /* OfferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14CEAA68224C6E6D002598B0 /* OfferCell.xib */; };
 		14D44C7E223ABBA6000AC818 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D44C7D223ABBA6000AC818 /* AppDelegate.swift */; };
@@ -332,6 +334,8 @@
 		14B746E1223E6645007AE4BD /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		14B746E2223E6645007AE4BD /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		14B746E4223E6645007AE4BD /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		14B8107F225304A500241AE2 /* CancelOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelOrderVC.swift; sourceTree = "<group>"; };
+		14B81080225304A500241AE2 /* CancelOrderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CancelOrderVC.xib; sourceTree = "<group>"; };
 		14CEAA67224C6E6D002598B0 /* OfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCell.swift; sourceTree = "<group>"; };
 		14CEAA68224C6E6D002598B0 /* OfferCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferCell.xib; sourceTree = "<group>"; };
 		14D44C7A223ABBA6000AC818 /* ShankarMasala.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShankarMasala.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -536,6 +540,8 @@
 				14F724232245C5EC00FFAB5B /* ShppingChargesVC.xib */,
 				14F724352245DA3600FFAB5B /* ShippingDetailVC.swift */,
 				14F724362245DA3600FFAB5B /* ShippingDetailVC.xib */,
+				14B8107F225304A500241AE2 /* CancelOrderVC.swift */,
+				14B81080225304A500241AE2 /* CancelOrderVC.xib */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -1027,6 +1033,7 @@
 				14956C02223D55C500945EA1 /* MenuViewCell.xib in Resources */,
 				14B74689223E412B007AE4BD /* NotificationCell.xib in Resources */,
 				142BB41022477B3100701EF6 /* ProductItemCell.xib in Resources */,
+				14B81082225304A500241AE2 /* CancelOrderVC.xib in Resources */,
 				14492C132243AEAC004FFE9E /* ProductCollectionViewCell.xib in Resources */,
 				14492C1B2243B7BE004FFE9E /* ProductVC.xib in Resources */,
 				14B7470E223E6645007AE4BD /* Mapping.plist in Resources */,
@@ -1251,6 +1258,7 @@
 				14B746FE223E6645007AE4BD /* NSDate+Components.m in Sources */,
 				14492C122243AEAC004FFE9E /* ProductCollectionViewCell.swift in Sources */,
 				14B746E6223E6645007AE4BD /* ColorCostants.swift in Sources */,
+				14B81081225304A500241AE2 /* CancelOrderVC.swift in Sources */,
 				14B746EB223E6645007AE4BD /* CustomButton.swift in Sources */,
 				14492C1A2243B7BE004FFE9E /* ProductVC.swift in Sources */,
 				14B74691223E503E007AE4BD /* OrderHistoryCell.swift in Sources */,
