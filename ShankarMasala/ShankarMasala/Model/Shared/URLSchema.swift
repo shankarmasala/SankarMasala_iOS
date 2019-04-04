@@ -15,6 +15,6 @@ let kSearchProduct                           =   "productService/SearchProduct"
 let kProductImageLoad                        =   "product/"
 let kCategoryImageLoad                       =   "category/"
 let kShiipingMethodList                      =   "shippingMethodService/getShiipingMethodList"
-
+let kStores                                  =   "storesService/fetchAllStore"
 //http://mywebsitedemo.biz/cakephp/shankarmasala/GROUNDED SPICES  (14-08-2018 12 42 12).png
 //http://mywebsitedemo.biz/cakephp/shankarmasala/product

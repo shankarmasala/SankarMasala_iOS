@@ -152,6 +152,33 @@ extension Manager {
         request.setParameter(productname, forKey: "productName")
         request.startRequest()
     }
+    
+    
+    class func loadAllStore(block : @escaping ItemLoadedBlock) {
+        let request = Request.init(url: "\(kBaseUrl)\(kStores)", method: RequestMethod(rawValue: "POST")!) { (success:Bool, request:Request, message:NSString) -> (Void) in
+            if request.isSuccess {
+                let arr = request.serverData["data"] as! [[String : Any]]
+                for dict in arr{
+                    if dict["status"] as! String == "False"{
+                        block("",dict["message"] as! String)
+                        return
+                    }
+                    
+                    if let dataArray = dict["data"] as? [[String : Any]] {
+                        MagicalRecord.save(blockAndWait: { (localContext:NSManagedObjectContext) in
+                            let arr = FEMDeserializer.collection(fromRepresentation: dataArray, mapping: Store.defaultMapping(), context: localContext)
+                            DispatchQueue.main.async {
+                                block(arr,"")
+                            }
+                        })
+                    } else {
+                        block("",message as String)
+                    }
+                }
+            }
+        }
+        request.startRequest()
+    }
 }
             
 

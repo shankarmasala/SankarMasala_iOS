@@ -79,6 +79,31 @@
 		<key>state_name</key>
 		<string>state_name</string>
 	</dict>
+	<key>Store</key>
+	<dict>
+		<key>email</key>
+		<string>email</string>
+		<key>status</key>
+		<string>status</string>
+		<key>createdDate</key>
+		<string>createdDate</string>
+		<key>entityid</key>
+		<string>id</string>
+		<key>store_name</key>
+		<string>store_name</string>
+		<key>state_id</key>
+		<string>id</string>
+		<key>city_id</key>
+		<string>city_id</string>
+		<key>city_name</key>
+		<string>city_name</string>
+		<key>store_address</key>
+		<string>store_address</string>
+		<key>contact_person</key>
+		<string>contact_person</string>
+		<key>contact_number</key>
+		<string>contact_number</string>
+	</dict>
 	<key>Categori</key>
 	<dict>
 		<key>entityid</key>

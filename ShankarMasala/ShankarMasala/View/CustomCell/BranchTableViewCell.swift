@@ -10,6 +10,8 @@ import UIKit
 
 class BranchTableViewCell: UITableViewCell {
 
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

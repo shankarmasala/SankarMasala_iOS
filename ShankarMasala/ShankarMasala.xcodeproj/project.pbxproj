@@ -108,6 +108,8 @@
 		14956C10223D619600945EA1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 14956C0C223D619600945EA1 /* LICENSE */; };
 		14956C11223D619600945EA1 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14956C0E223D619600945EA1 /* SlideMenuController.swift */; };
 		14956C12223D619600945EA1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 14956C0F223D619600945EA1 /* README.md */; };
+		14B72C902255A7B200597176 /* _Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B72C8F2255A7B100597176 /* _Store.swift */; };
+		14B72C922255A7BC00597176 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B72C912255A7BC00597176 /* Store.swift */; };
 		14B74684223E4001007AE4BD /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B74682223E4001007AE4BD /* NotificationVC.swift */; };
 		14B74685223E4001007AE4BD /* NotificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B74683223E4001007AE4BD /* NotificationVC.xib */; };
 		14B74688223E412B007AE4BD /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B74686223E412B007AE4BD /* NotificationCell.swift */; };
@@ -285,6 +287,8 @@
 		14956C0C223D619600945EA1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		14956C0E223D619600945EA1 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		14956C0F223D619600945EA1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		14B72C8F2255A7B100597176 /* _Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _Store.swift; sourceTree = "<group>"; };
+		14B72C912255A7BC00597176 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Store.swift; path = ShankarMasala/Model/Coredata/StaticClasses/Store.swift; sourceTree = SOURCE_ROOT; };
 		14B74682223E4001007AE4BD /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
 		14B74683223E4001007AE4BD /* NotificationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationVC.xib; sourceTree = "<group>"; };
 		14B74686223E412B007AE4BD /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
@@ -790,6 +794,7 @@
 		14B746D7223E6645007AE4BD /* UserClasses */ = {
 			isa = PBXGroup;
 			children = (
+				14B72C912255A7BC00597176 /* Store.swift */,
 				14089BFC224FC73600B404DC /* CountryObject.swift */,
 				141D9974224FBE270067969A /* Cart.swift */,
 				141D9971224FBE270067969A /* Categori.swift */,
@@ -804,6 +809,7 @@
 		14B746D9223E6645007AE4BD /* StaticClasses */ = {
 			isa = PBXGroup;
 			children = (
+				14B72C8F2255A7B100597176 /* _Store.swift */,
 				14089BFA224FC72B00B404DC /* _CountryObject.swift */,
 				141D995E224FBDE30067969A /* _Cart.swift */,
 				141D9962224FBDE40067969A /* _CartItem.swift */,
@@ -1289,6 +1295,7 @@
 				148C1C6722511A8200DCC39F /* ActionSheetStringPicker.m in Sources */,
 				141D996C224FBDE40067969A /* _Product.swift in Sources */,
 				141D9979224FBE270067969A /* Product.swift in Sources */,
+				14B72C902255A7B200597176 /* _Store.swift in Sources */,
 				14B746F5223E6645007AE4BD /* NSManagedObject+Duplicate.m in Sources */,
 				1461E0542245507B0063EB14 /* ContactUsVC.swift in Sources */,
 				14492C1E2243E9AC004FFE9E /* OrderProductVC.swift in Sources */,
@@ -1311,6 +1318,7 @@
 				141D9975224FBE270067969A /* State.swift in Sources */,
 				14158C7C2246926E00188EB0 /* ShippingDetailFirstCell.swift in Sources */,
 				14B746FE223E6645007AE4BD /* NSDate+Components.m in Sources */,
+				14B72C922255A7BC00597176 /* Store.swift in Sources */,
 				14492C122243AEAC004FFE9E /* ProductCollectionViewCell.swift in Sources */,
 				14B746E6223E6645007AE4BD /* ColorCostants.swift in Sources */,
 				14B746EB223E6645007AE4BD /* CustomButton.swift in Sources */,

@@ -65,6 +65,19 @@
         <attribute name="state_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="state_name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Store" representedClassName="Store" syncable="YES">
+        <attribute name="city_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="city_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contact_number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contact_person" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="entityid" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="state_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="store_address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="store_name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Cart" positionX="-45" positionY="135" width="128" height="105"/>
         <element name="Categori" positionX="-63" positionY="-18" width="128" height="255"/>
@@ -73,5 +86,6 @@
         <element name="ProductAttribute" positionX="-63" positionY="135" width="128" height="165"/>
         <element name="ShippingMethods" positionX="-63" positionY="135" width="128" height="135"/>
         <element name="State" positionX="-45" positionY="144" width="128" height="75"/>
+        <element name="Store" positionX="-45" positionY="135" width="128" height="210"/>
     </elements>
 </model>

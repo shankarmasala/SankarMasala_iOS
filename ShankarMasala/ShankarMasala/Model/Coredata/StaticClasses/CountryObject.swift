@@ -1,7 +1,7 @@
 import Foundation
 import FastEasyMapping
 import MagicalRecord
-@objc(Country)
+@objc(CountryObject)
 open class CountryObject: _CountryObject {
     class func defaultMapping () -> FEMMapping {
         let mapping = FEMMapping(entityName: CountryObject.entityName())
