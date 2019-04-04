@@ -111,6 +111,12 @@
 		14AE361D225668840064A15E /* HomeDelivery1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE361B225668840064A15E /* HomeDelivery1VC.swift */; };
 		14AE361E225668840064A15E /* HomeDelivery1VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14AE361C225668840064A15E /* HomeDelivery1VC.xib */; };
 		14AE36202256706D0064A15E /* CommonInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE361F2256706D0064A15E /* CommonInput.swift */; };
+		14AE3624225676340064A15E /* _CountryDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE3621225676330064A15E /* _CountryDelivery.swift */; };
+		14AE3625225676340064A15E /* _CityDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE3622225676330064A15E /* _CityDelivery.swift */; };
+		14AE3626225676340064A15E /* _StateDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE3623225676330064A15E /* _StateDelivery.swift */; };
+		14AE362A225676540064A15E /* CityDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE3627225676540064A15E /* CityDelivery.swift */; };
+		14AE362B225676540064A15E /* CountryDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE3628225676540064A15E /* CountryDelivery.swift */; };
+		14AE362C225676540064A15E /* StateDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE3629225676540064A15E /* StateDelivery.swift */; };
 		14B72C902255A7B200597176 /* _Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B72C8F2255A7B100597176 /* _Store.swift */; };
 		14B72C922255A7BC00597176 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B72C912255A7BC00597176 /* Store.swift */; };
 		14B74684223E4001007AE4BD /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B74682223E4001007AE4BD /* NotificationVC.swift */; };
@@ -293,6 +299,12 @@
 		14AE361B225668840064A15E /* HomeDelivery1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDelivery1VC.swift; sourceTree = "<group>"; };
 		14AE361C225668840064A15E /* HomeDelivery1VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDelivery1VC.xib; sourceTree = "<group>"; };
 		14AE361F2256706D0064A15E /* CommonInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInput.swift; sourceTree = "<group>"; };
+		14AE3621225676330064A15E /* _CountryDelivery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _CountryDelivery.swift; sourceTree = "<group>"; };
+		14AE3622225676330064A15E /* _CityDelivery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _CityDelivery.swift; sourceTree = "<group>"; };
+		14AE3623225676330064A15E /* _StateDelivery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _StateDelivery.swift; sourceTree = "<group>"; };
+		14AE3627225676540064A15E /* CityDelivery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityDelivery.swift; path = ShankarMasala/Model/Coredata/StaticClasses/CityDelivery.swift; sourceTree = SOURCE_ROOT; };
+		14AE3628225676540064A15E /* CountryDelivery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountryDelivery.swift; path = ShankarMasala/Model/Coredata/StaticClasses/CountryDelivery.swift; sourceTree = SOURCE_ROOT; };
+		14AE3629225676540064A15E /* StateDelivery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StateDelivery.swift; path = ShankarMasala/Model/Coredata/StaticClasses/StateDelivery.swift; sourceTree = SOURCE_ROOT; };
 		14B72C8F2255A7B100597176 /* _Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _Store.swift; sourceTree = "<group>"; };
 		14B72C912255A7BC00597176 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Store.swift; path = ShankarMasala/Model/Coredata/StaticClasses/Store.swift; sourceTree = SOURCE_ROOT; };
 		14B74682223E4001007AE4BD /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
@@ -810,6 +822,9 @@
 		14B746D7223E6645007AE4BD /* UserClasses */ = {
 			isa = PBXGroup;
 			children = (
+				14AE3627225676540064A15E /* CityDelivery.swift */,
+				14AE3628225676540064A15E /* CountryDelivery.swift */,
+				14AE3629225676540064A15E /* StateDelivery.swift */,
 				14B72C912255A7BC00597176 /* Store.swift */,
 				14089BFC224FC73600B404DC /* CountryObject.swift */,
 				141D9974224FBE270067969A /* Cart.swift */,
@@ -825,6 +840,9 @@
 		14B746D9223E6645007AE4BD /* StaticClasses */ = {
 			isa = PBXGroup;
 			children = (
+				14AE3622225676330064A15E /* _CityDelivery.swift */,
+				14AE3621225676330064A15E /* _CountryDelivery.swift */,
+				14AE3623225676330064A15E /* _StateDelivery.swift */,
 				14B72C8F2255A7B100597176 /* _Store.swift */,
 				14089BFA224FC72B00B404DC /* _CountryObject.swift */,
 				141D995E224FBDE30067969A /* _Cart.swift */,
@@ -1255,6 +1273,7 @@
 				14B74704223E6645007AE4BD /* NSDate+Extentsion.m in Sources */,
 				14F7242E2245C84A00FFAB5B /* CollapsibleTableViewHeader.swift in Sources */,
 				0973298F2253D0A20025234A /* SelectBranchViewController.swift in Sources */,
+				14AE3624225676340064A15E /* _CountryDelivery.swift in Sources */,
 				14D44C96223ABE36000AC818 /* WalkScreenVC.swift in Sources */,
 				1427CC7E223CFCAE0073E3D8 /* LoginVC.swift in Sources */,
 				141D9977224FBE270067969A /* ShippingMethods.swift in Sources */,
@@ -1265,8 +1284,11 @@
 				091E3C8822551F2600E3EDA9 /* PlaceOrderViewController.swift in Sources */,
 				14B7468D223E4F9E007AE4BD /* OrderHistoryVC.swift in Sources */,
 				14869638223E1FF200220954 /* AboutUsVC.swift in Sources */,
+				14AE362B225676540064A15E /* CountryDelivery.swift in Sources */,
 				14B746FC223E6645007AE4BD /* NSDate+Compare.m in Sources */,
 				14B746EF223E6645007AE4BD /* CustomTextField.swift in Sources */,
+				14AE3626225676340064A15E /* _StateDelivery.swift in Sources */,
+				14AE362C225676540064A15E /* StateDelivery.swift in Sources */,
 				148C1C6422511A8200DCC39F /* ActionSheetDistancePicker.m in Sources */,
 				14869635223E15F300220954 /* BaseVC.swift in Sources */,
 				14956BDE223D4D3800945EA1 /* BaseTabBarController.swift in Sources */,
@@ -1282,6 +1304,7 @@
 				141D996A224FBDE40067969A /* _CartItem.swift in Sources */,
 				14D44CA2223AC909000AC818 /* UIStoryboard+Sugar.swift in Sources */,
 				141D9969224FBDE40067969A /* _State.swift in Sources */,
+				14AE3625225676340064A15E /* _CityDelivery.swift in Sources */,
 				14B7470F223E6645007AE4BD /* AccountManager.swift in Sources */,
 				14B74688223E412B007AE4BD /* NotificationCell.swift in Sources */,
 				148C1C6A22511A8200DCC39F /* AbstractActionSheetPicker.m in Sources */,
@@ -1336,6 +1359,7 @@
 				14956BEA223D4E1000945EA1 /* OfferVC.swift in Sources */,
 				141D9975224FBE270067969A /* State.swift in Sources */,
 				14158C7C2246926E00188EB0 /* ShippingDetailFirstCell.swift in Sources */,
+				14AE362A225676540064A15E /* CityDelivery.swift in Sources */,
 				14B746FE223E6645007AE4BD /* NSDate+Components.m in Sources */,
 				14B72C922255A7BC00597176 /* Store.swift in Sources */,
 				14492C122243AEAC004FFE9E /* ProductCollectionViewCell.swift in Sources */,

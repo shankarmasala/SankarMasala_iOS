@@ -104,6 +104,41 @@
 		<key>contact_number</key>
 		<string>contact_number</string>
 	</dict>
+	<key>StateDelivery</key>
+	<dict>
+		<key>name</key>
+		<string>name</string>
+		<key>country_id</key>
+		<string>country_id</string>
+		<key>entityid</key>
+		<string>id</string>
+		<key>is_default</key>
+		<string>is_default</string>
+	</dict>
+	<key>CityDelivery</key>
+	<dict>
+		<key>name</key>
+		<string>name</string>
+		<key>state_id</key>
+		<string>state_id</string>
+		<key>entityid</key>
+		<string>id</string>
+		<key>is_default</key>
+		<string>is_default</string>
+	</dict>
+	<key>CountryDelivery</key>
+	<dict>
+		<key>phonecode</key>
+		<string>phonecode</string>
+		<key>is_default</key>
+		<string>is_default</string>
+		<key>name</key>
+		<string>name</string>
+		<key>sortname</key>
+		<string>sortname</string>
+		<key>entityid</key>
+		<string>id</string>
+	</dict>
 	<key>Categori</key>
 	<dict>
 		<key>entityid</key>

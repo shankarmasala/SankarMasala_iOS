@@ -179,6 +179,87 @@ extension Manager {
         }
         request.startRequest()
     }
+    
+    class func loadAllCountryDelivery(block : @escaping ItemLoadedBlock) {
+        let request = Request.init(url: "\(kBaseUrl)\(kfetchAllCountry)", method: RequestMethod(rawValue: "POST")!) { (success:Bool, request:Request, message:NSString) -> (Void) in
+            if request.isSuccess {
+                let arr = request.serverData["data"] as! [[String : Any]]
+                for dict in arr{
+                    if dict["status"] as! String == "False"{
+                        block("",dict["message"] as! String)
+                        return
+                    }
+                    
+                    if let dataArray = dict["data"] as? [[String : Any]] {
+                        MagicalRecord.save(blockAndWait: { (localContext:NSManagedObjectContext) in
+                            let arr = FEMDeserializer.collection(fromRepresentation: dataArray, mapping: CountryDelivery.defaultMapping(), context: localContext)
+                            DispatchQueue.main.async {
+                                block(arr,"")
+                            }
+                        })
+                    } else {
+                        block("",message as String)
+                    }
+                }
+            }
+        }
+        request.startRequest()
+    }
+    
+    class func loadAllStateDeliveryBy(countryid : String , block : @escaping ItemLoadedBlock) {
+        let request = Request.init(url: "\(kBaseUrl)\(kfetchAllState)", method: RequestMethod(rawValue: "POST")!) { (success:Bool, request:Request, message:NSString) -> (Void) in
+            if request.isSuccess {
+                let arr = request.serverData["data"] as! [[String : Any]]
+                for dict in arr{
+                    if dict["status"] as! String == "False"{
+                        block("",dict["message"] as! String)
+                        return
+                    }
+                    
+                    if let dataArray = dict["data"] as? [[String : Any]] {
+                        MagicalRecord.save(blockAndWait: { (localContext:NSManagedObjectContext) in
+                            let arr = FEMDeserializer.collection(fromRepresentation: dataArray, mapping: StateDelivery.defaultMapping(), context: localContext)
+                            DispatchQueue.main.async {
+                                block(arr,"")
+                            }
+                        })
+                    } else {
+                        block("",message as String)
+                    }
+                }
+            }
+        }
+        request.setParameter(countryid, forKey: "countryId")
+        request.startRequest()
+    }
+    
+    class func loadAllCityDeliveryBy(stateid : String , block : @escaping ItemLoadedBlock) {
+        let request = Request.init(url: "\(kBaseUrl)\(kfetchCity)", method: RequestMethod(rawValue: "POST")!) { (success:Bool, request:Request, message:NSString) -> (Void) in
+            if request.isSuccess {
+                let arr = request.serverData["data"] as! [[String : Any]]
+                for dict in arr{
+                    if dict["status"] as! String == "False"{
+                        block("",dict["message"] as! String)
+                        return
+                    }
+                    
+                    if let dataArray = dict["data"] as? [[String : Any]] {
+                        MagicalRecord.save(blockAndWait: { (localContext:NSManagedObjectContext) in
+                            let arr = FEMDeserializer.collection(fromRepresentation: dataArray, mapping: CityDelivery.defaultMapping(), context: localContext)
+                            DispatchQueue.main.async {
+                                block(arr,"")
+                            }
+                        })
+                    } else {
+                        block("",message as String)
+                    }
+                }
+            }
+        }
+        request.setParameter(stateid, forKey: "stateId")
+        request.startRequest()
+    }
+    
 }
             
 

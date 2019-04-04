@@ -23,7 +23,9 @@ class HomeDelivery1VC: BaseVC {
     @IBOutlet weak var txtLandMark: UITextField!
     @IBOutlet weak var txtGST: UITextField!
     
-    
+    var countryArr : [CountryDelivery] = [CountryDelivery]()
+    var stateArr : [StateDelivery] = [StateDelivery]()
+    var cityArr : [CityDelivery] = [CityDelivery]()
     
     class func initViewController() -> HomeDelivery1VC{
         let vc = HomeDelivery1VC(nibName: "HomeDelivery1VC", bundle: nil)
@@ -33,6 +35,14 @@ class HomeDelivery1VC: BaseVC {
     override func viewDidLoad() {
         self.isBackButton = true
         super.viewDidLoad()
+        
+        Manager.loadAllCountryDelivery { (result, message) -> (Void) in
+            self.countryArr = CountryDelivery.getAll()!
+            if self.countryArr.count > 0 {
+                let cc = self.countryArr[0]
+                 self.txtCountry.text = cc.name
+            }
+        }
 
         // Do any additional setup after loading the view.
     }
