@@ -20,6 +20,7 @@ class DeliveryTypeViewController: BaseVC {
     }
     
     override func viewDidLoad() {
+        self.isBackButton = true
         super.viewDidLoad()
 
         viewPickup.layer.borderColor = UIColor.gray.cgColor
@@ -36,12 +37,16 @@ class DeliveryTypeViewController: BaseVC {
         
         if sender.tag == 1{
             // Pickup clicked
+            let controller = SelectBranchViewController.initViewController()
+            self.navigationController?.pushViewController(controller, animated: true)
         }else{
             // Delivery Clicked
+            let vc = HomeDelivery1VC.initViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+            
         }
         
-        let controller = SelectBranchViewController.initViewController()
-        self.navigationController?.pushViewController(controller, animated: true)
+        
         
     }
     

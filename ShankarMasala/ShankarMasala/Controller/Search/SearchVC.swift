@@ -12,7 +12,7 @@ class SearchVC: BaseVC, UITextFieldDelegate {
 
     @IBOutlet weak var subView: UIView!
     @IBOutlet weak var txtField: UITextField!
-    var arrary : [String] = [String]()
+    var arrary : [Product] = [Product]()
     @IBOutlet weak var tblView : UITableView!
     
     class func initViewController() -> SearchVC{
@@ -29,25 +29,7 @@ class SearchVC: BaseVC, UITextFieldDelegate {
         self.subView.layer.borderWidth = 1
         self.subView.clipsToBounds = true
         
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        
+
         tblView.tableFooterView = UIView()
         tblView.register(UINib(nibName: "OfferCell", bundle: nil), forCellReuseIdentifier: "OfferCell")
         
@@ -70,8 +52,9 @@ class SearchVC: BaseVC, UITextFieldDelegate {
             let textRange = Range(range, in: text) {
             let updatedText = text.replacingCharacters(in: textRange,
                                                        with: string)
-            self.apiCalling(searchString: updatedText)
             
+            self.arrary = Product.searchByName(str: updatedText)!
+            tblView.reloadData()
         }
         return true
     }
@@ -103,10 +86,8 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : OfferCell = tableView.dequeueReusableCell(withIdentifier: "OfferCell", for: indexPath) as! OfferCell
-        // cell.lblStatus.text = "Pending"
-        //cell.lblOrderId.text = "1234"
-        //cell.lblOrderdate.text = "12-12-1989"
-        //cell.lblTotalPaid.text = "$12,000"
+        let pro = self.arrary[indexPath.row]
+        cell.setData(pro: pro)
         cell.selectionStyle = .none
         return cell
     }
@@ -117,8 +98,9 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tblView.deselectRow(at: indexPath, animated: true)
-        // let vc = OrderProductVC.initViewController()
-        //self.navigationController?.pushViewController(vc, animated: true)
+        let pro = self.arrary[indexPath.row]
+        let vc = ProductDetailVC.initViewController(pro: pro)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     

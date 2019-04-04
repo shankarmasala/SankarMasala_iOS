@@ -37,6 +37,14 @@ class HomeVC: BaseVC {
             
         }
         
+        Manager.loadAllProductByCategory { (result, message) -> (Void) in
+           
+//            if message.count > 0 {
+//                Utils.showAlert(withMessage: message)
+//                return
+//            }
+        }
+        
         
     }
     override func viewWillAppear(_ animated: Bool) {

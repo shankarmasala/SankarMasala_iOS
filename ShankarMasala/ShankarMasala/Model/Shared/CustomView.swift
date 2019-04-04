@@ -12,9 +12,9 @@ class CustomView: UIView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        layer.cornerRadius = 18
+        layer.cornerRadius = self.frame.height/2
         layer.borderWidth = 1.0
-        layer.borderColor = UIColor(red: 225.0/255.0, green: 62.0/255.0, blue: 67.0/255.0, alpha: 1.0).cgColor
+        layer.borderColor = UIColor.red.cgColor
         self.clipsToBounds = true
     }
 

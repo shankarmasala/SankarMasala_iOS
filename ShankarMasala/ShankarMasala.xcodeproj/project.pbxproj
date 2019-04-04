@@ -108,6 +108,9 @@
 		14956C10223D619600945EA1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 14956C0C223D619600945EA1 /* LICENSE */; };
 		14956C11223D619600945EA1 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14956C0E223D619600945EA1 /* SlideMenuController.swift */; };
 		14956C12223D619600945EA1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 14956C0F223D619600945EA1 /* README.md */; };
+		14AE361D225668840064A15E /* HomeDelivery1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE361B225668840064A15E /* HomeDelivery1VC.swift */; };
+		14AE361E225668840064A15E /* HomeDelivery1VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14AE361C225668840064A15E /* HomeDelivery1VC.xib */; };
+		14AE36202256706D0064A15E /* CommonInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE361F2256706D0064A15E /* CommonInput.swift */; };
 		14B72C902255A7B200597176 /* _Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B72C8F2255A7B100597176 /* _Store.swift */; };
 		14B72C922255A7BC00597176 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B72C912255A7BC00597176 /* Store.swift */; };
 		14B74684223E4001007AE4BD /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B74682223E4001007AE4BD /* NotificationVC.swift */; };
@@ -287,6 +290,9 @@
 		14956C0C223D619600945EA1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		14956C0E223D619600945EA1 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		14956C0F223D619600945EA1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		14AE361B225668840064A15E /* HomeDelivery1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDelivery1VC.swift; sourceTree = "<group>"; };
+		14AE361C225668840064A15E /* HomeDelivery1VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDelivery1VC.xib; sourceTree = "<group>"; };
+		14AE361F2256706D0064A15E /* CommonInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInput.swift; sourceTree = "<group>"; };
 		14B72C8F2255A7B100597176 /* _Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _Store.swift; sourceTree = "<group>"; };
 		14B72C912255A7BC00597176 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Store.swift; path = ShankarMasala/Model/Coredata/StaticClasses/Store.swift; sourceTree = SOURCE_ROOT; };
 		14B74682223E4001007AE4BD /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
@@ -645,6 +651,15 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		14AE361A225667CF0064A15E /* HomeDelivery */ = {
+			isa = PBXGroup;
+			children = (
+				14AE361B225668840064A15E /* HomeDelivery1VC.swift */,
+				14AE361C225668840064A15E /* HomeDelivery1VC.xib */,
+			);
+			path = HomeDelivery;
+			sourceTree = "<group>";
+		};
 		14B7468A223E4F7F007AE4BD /* OrderHistory */ = {
 			isa = PBXGroup;
 			children = (
@@ -685,6 +700,7 @@
 				14B746A8223E6645007AE4BD /* Categories */,
 				14B746D2223E6645007AE4BD /* Toast.swift */,
 				148C1C6B22511EBE00DCC39F /* Header.h */,
+				14AE361F2256706D0064A15E /* CommonInput.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -875,6 +891,7 @@
 		14D44C8F223ABC04000AC818 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				14AE361A225667CF0064A15E /* HomeDelivery */,
 				091E3C8522551F0300E3EDA9 /* Place Order */,
 				0973298C2253D0820025234A /* Select Branch */,
 				09AB84BA2252916500B3291B /* Select Delivery Type */,
@@ -1083,6 +1100,7 @@
 				14CEAA6A224C6E6D002598B0 /* OfferCell.xib in Resources */,
 				14492C0F2243A43F004FFE9E /* masala.jpg in Resources */,
 				14158C852246A36B00188EB0 /* CartCell.xib in Resources */,
+				14AE361E225668840064A15E /* HomeDelivery1VC.xib in Resources */,
 				1427CC7F223CFCAE0073E3D8 /* LoginVC.xib in Resources */,
 				091E3C8922551F2600E3EDA9 /* PlaceOrderViewController.xib in Resources */,
 				14956C02223D55C500945EA1 /* MenuViewCell.xib in Resources */,
@@ -1273,6 +1291,7 @@
 				1427CC7A223CFC950073E3D8 /* OtpVC.swift in Sources */,
 				14B746E8223E6645007AE4BD /* CustomView.swift in Sources */,
 				14B746F7223E6645007AE4BD /* NSDictionary+Extension.m in Sources */,
+				14AE361D225668840064A15E /* HomeDelivery1VC.swift in Sources */,
 				141D997A224FBE270067969A /* ProductAttribute.swift in Sources */,
 				148C1C6322511A8200DCC39F /* ActionSheetLocalePicker.m in Sources */,
 				14855A7222400BD7006E985B /* LoaderView.swift in Sources */,
@@ -1335,6 +1354,7 @@
 				14CEAA69224C6E6D002598B0 /* OfferCell.swift in Sources */,
 				14B746F4223E6645007AE4BD /* NSManagedObject+Mapping.m in Sources */,
 				14492C222243EA57004FFE9E /* OrderProductCell.swift in Sources */,
+				14AE36202256706D0064A15E /* CommonInput.swift in Sources */,
 				14B74708223E6645007AE4BD /* CDHelper.swift in Sources */,
 				14B746F0223E6645007AE4BD /* NotificationCenterConstants.swift in Sources */,
 				14F69840224953B10081150C /* ProductItemTitleCell.swift in Sources */,

@@ -26,6 +26,11 @@ open class Product: _Product {
         return Product.mr_findAllSorted(by: "entityid", ascending: true, with: pre) as? [Product]
     }
     
+    class func searchByName(str : String) -> [Product]? {
+        let pre = NSPredicate(format:"product_name BEGINSWITH[c] %@",str,str)
+        return Product.mr_findAllSorted(by: "entityid", ascending: true, with: pre) as? [Product]
+    }
+    
     class func newEntity() -> Product? {
         let new = Product.mr_createEntity(in: NSManagedObjectContext.mr_default())
         return new
