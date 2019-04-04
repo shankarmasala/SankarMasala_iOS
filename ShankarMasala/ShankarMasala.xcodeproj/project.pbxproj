@@ -22,6 +22,8 @@
 
 /* Begin PBXBuildFile section */
 		007ACA1C2F5335A6ADE172CB /* Pods_ShankarMasala.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6CC29982C0DD0240397B98 /* Pods_ShankarMasala.framework */; };
+		091E3C8822551F2600E3EDA9 /* PlaceOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091E3C8622551F2600E3EDA9 /* PlaceOrderViewController.swift */; };
+		091E3C8922551F2600E3EDA9 /* PlaceOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091E3C8722551F2600E3EDA9 /* PlaceOrderViewController.xib */; };
 		0973298F2253D0A20025234A /* SelectBranchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973298D2253D0A20025234A /* SelectBranchViewController.swift */; };
 		097329902253D0A20025234A /* SelectBranchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0973298E2253D0A20025234A /* SelectBranchViewController.xib */; };
 		097329952253D4760025234A /* BranchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097329932253D4760025234A /* BranchTableViewCell.swift */; };
@@ -185,6 +187,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		091E3C8622551F2600E3EDA9 /* PlaceOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOrderViewController.swift; sourceTree = "<group>"; };
+		091E3C8722551F2600E3EDA9 /* PlaceOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceOrderViewController.xib; sourceTree = "<group>"; };
 		0973298D2253D0A20025234A /* SelectBranchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBranchViewController.swift; sourceTree = "<group>"; };
 		0973298E2253D0A20025234A /* SelectBranchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectBranchViewController.xib; sourceTree = "<group>"; };
 		097329932253D4760025234A /* BranchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchTableViewCell.swift; sourceTree = "<group>"; };
@@ -395,6 +399,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		091E3C8522551F0300E3EDA9 /* Place Order */ = {
+			isa = PBXGroup;
+			children = (
+				091E3C8622551F2600E3EDA9 /* PlaceOrderViewController.swift */,
+				091E3C8722551F2600E3EDA9 /* PlaceOrderViewController.xib */,
+			);
+			path = "Place Order";
+			sourceTree = "<group>";
+		};
 		0973298C2253D0820025234A /* Select Branch */ = {
 			isa = PBXGroup;
 			children = (
@@ -856,6 +869,7 @@
 		14D44C8F223ABC04000AC818 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				091E3C8522551F0300E3EDA9 /* Place Order */,
 				0973298C2253D0820025234A /* Select Branch */,
 				09AB84BA2252916500B3291B /* Select Delivery Type */,
 				1461E04D22454C5F0063EB14 /* Extra */,
@@ -1064,6 +1078,7 @@
 				14492C0F2243A43F004FFE9E /* masala.jpg in Resources */,
 				14158C852246A36B00188EB0 /* CartCell.xib in Resources */,
 				1427CC7F223CFCAE0073E3D8 /* LoginVC.xib in Resources */,
+				091E3C8922551F2600E3EDA9 /* PlaceOrderViewController.xib in Resources */,
 				14956C02223D55C500945EA1 /* MenuViewCell.xib in Resources */,
 				14B74689223E412B007AE4BD /* NotificationCell.xib in Resources */,
 				142BB41022477B3100701EF6 /* ProductItemCell.xib in Resources */,
@@ -1223,6 +1238,7 @@
 				14B746F9223E6645007AE4BD /* NSObject+Properties.m in Sources */,
 				14B746FF223E6645007AE4BD /* NSDate+Year.m in Sources */,
 				14B74700223E6645007AE4BD /* NSDate+Day.m in Sources */,
+				091E3C8822551F2600E3EDA9 /* PlaceOrderViewController.swift in Sources */,
 				14B7468D223E4F9E007AE4BD /* OrderHistoryVC.swift in Sources */,
 				14869638223E1FF200220954 /* AboutUsVC.swift in Sources */,
 				14B746FC223E6645007AE4BD /* NSDate+Compare.m in Sources */,

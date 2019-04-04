@@ -28,6 +28,13 @@ class SelectBranchViewController: BaseVC {
         
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func nextClicked (sender : UIButton) {
+        
+        let VC = PlaceOrderViewController.initViewController()
+        self.navigationController?.pushViewController(VC, animated: true)
+        
+    }
 
 }
 
