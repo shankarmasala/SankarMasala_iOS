@@ -92,7 +92,25 @@ extension SelectBranchViewController : UITableViewDataSource {
         let cityid = sections[indexPath.section]
         let s_arr  = Store.getByCityId(c_id: cityid)
         let store  = s_arr![indexPath.row]
-        print(store.store_name)
+        
+        if let name = store.store_name{
+            cell.lblTitle.text = name
+        }else{
+            cell.lblTitle.text = " "
+        }
+
+        if let address = store.store_address{
+            cell.lblAddress.text = address
+        }else{
+            cell.lblAddress.text = ""
+        }
+        
+        if let number = store.contact_number{
+            cell.lblContactNumber.text = "Contact Number : \(number)"
+        }else{
+            cell.lblContactNumber.text = "Contact Number :"
+        }
+        
         return cell
     }
     

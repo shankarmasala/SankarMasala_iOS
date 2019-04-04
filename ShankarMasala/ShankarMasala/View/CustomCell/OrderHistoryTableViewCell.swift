@@ -1,20 +1,21 @@
 //
-//  BranchTableViewCell.swift
+//  OrderHistoryTableViewCell.swift
 //  ShankarMasala
 //
-//  Created by Nimit Bagadiya on 02/04/19.
+//  Created by Nimit Bagadiya on 04/04/19.
 //  Copyright © 2019 Narendra Mistri. All rights reserved.
 //
 
 import UIKit
 
-class BranchTableViewCell: UITableViewCell {
+class OrderHistoryTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var imgSelection: UIImageView!
-    @IBOutlet weak var lblAddress: UILabel!
-    @IBOutlet weak var lblContactNumber: UILabel!
-    
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var lblProductName: UILabel!
+    @IBOutlet weak var lblPacking: UILabel!
+    @IBOutlet weak var lblMRP: UILabel!
+    @IBOutlet weak var lblPrice: UILabel!
+    @IBOutlet weak var lblQty: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

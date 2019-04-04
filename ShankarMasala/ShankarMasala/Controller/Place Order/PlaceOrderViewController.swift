@@ -11,7 +11,12 @@ import UIKit
 class PlaceOrderViewController: BaseVC {
 
     @IBOutlet weak var viewCouponCode: UIView!
+    @IBOutlet weak var viewConfirmationPopup: UIView!
     
+    @IBOutlet weak var btnPayOnStore: UIButton!
+    @IBOutlet weak var btnPayOnline: UIButton!
+    
+    @IBOutlet weak var txtViewComment: UITextView!
     
     class func initViewController() -> PlaceOrderViewController{
         let vc = PlaceOrderViewController(nibName: "PlaceOrderViewController", bundle: nil)
@@ -32,9 +37,20 @@ class PlaceOrderViewController: BaseVC {
     
     
     @IBAction func placeOrder(_ sender: UIButton) {
+        viewConfirmationPopup.isHidden = false
+    }
+    
+    @IBAction func actionOk(_ sender: Any) {
         
+        viewConfirmationPopup.isHidden = true
         
+        let orderHistortyViewController = OrderHistoryProductListViewController.initViewController()
+        self.navigationController?.pushViewController(orderHistortyViewController, animated: true)
         
+    }
+    
+    @IBAction func actionNo(_ sender: Any) {
+        viewConfirmationPopup.isHidden = true;
     }
     
 
