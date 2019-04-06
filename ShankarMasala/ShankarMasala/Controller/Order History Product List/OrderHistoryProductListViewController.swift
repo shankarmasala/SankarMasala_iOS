@@ -39,6 +39,10 @@ class OrderHistoryProductListViewController: BaseVC {
     }
     
     @IBAction func viewInvoiceClicked(_ sender: Any) {
+        
+        let controller = SalesInvoiceViewController.initViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
+        
     }
     
     @IBAction func totalClicked(_ sender: Any) {

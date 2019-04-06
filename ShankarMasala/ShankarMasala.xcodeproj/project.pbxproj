@@ -28,6 +28,10 @@
 		091E3C962256845700E3EDA9 /* OrderHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091E3C942256845600E3EDA9 /* OrderHistoryTableViewCell.swift */; };
 		091E3C9A2256846F00E3EDA9 /* OrderHistoryProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091E3C982256846E00E3EDA9 /* OrderHistoryProductListViewController.swift */; };
 		091E3C9B2256846F00E3EDA9 /* OrderHistoryProductListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091E3C992256846E00E3EDA9 /* OrderHistoryProductListViewController.xib */; };
+		091E3C9F2257C32C00E3EDA9 /* SalesInvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091E3C9D2257C32C00E3EDA9 /* SalesInvoiceViewController.swift */; };
+		091E3CA02257C32C00E3EDA9 /* SalesInvoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091E3C9E2257C32C00E3EDA9 /* SalesInvoiceViewController.xib */; };
+		0972AE8F2258A70800E70DE8 /* SalesInvoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0972AE8D2258A70800E70DE8 /* SalesInvoiceTableViewCell.swift */; };
+		0972AE902258A70800E70DE8 /* SalesInvoiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0972AE8E2258A70800E70DE8 /* SalesInvoiceTableViewCell.xib */; };
 		0973298F2253D0A20025234A /* SelectBranchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973298D2253D0A20025234A /* SelectBranchViewController.swift */; };
 		097329902253D0A20025234A /* SelectBranchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0973298E2253D0A20025234A /* SelectBranchViewController.xib */; };
 		097329952253D4760025234A /* BranchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097329932253D4760025234A /* BranchTableViewCell.swift */; };
@@ -208,6 +212,10 @@
 		091E3C942256845600E3EDA9 /* OrderHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		091E3C982256846E00E3EDA9 /* OrderHistoryProductListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryProductListViewController.swift; sourceTree = "<group>"; };
 		091E3C992256846E00E3EDA9 /* OrderHistoryProductListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderHistoryProductListViewController.xib; sourceTree = "<group>"; };
+		091E3C9D2257C32C00E3EDA9 /* SalesInvoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesInvoiceViewController.swift; sourceTree = "<group>"; };
+		091E3C9E2257C32C00E3EDA9 /* SalesInvoiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SalesInvoiceViewController.xib; sourceTree = "<group>"; };
+		0972AE8D2258A70800E70DE8 /* SalesInvoiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesInvoiceTableViewCell.swift; sourceTree = "<group>"; };
+		0972AE8E2258A70800E70DE8 /* SalesInvoiceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SalesInvoiceTableViewCell.xib; sourceTree = "<group>"; };
 		0973298D2253D0A20025234A /* SelectBranchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBranchViewController.swift; sourceTree = "<group>"; };
 		0973298E2253D0A20025234A /* SelectBranchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectBranchViewController.xib; sourceTree = "<group>"; };
 		097329932253D4760025234A /* BranchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchTableViewCell.swift; sourceTree = "<group>"; };
@@ -447,6 +455,15 @@
 			path = "Order History Product List";
 			sourceTree = "<group>";
 		};
+		091E3C9C2257C30D00E3EDA9 /* Sales Invoice */ = {
+			isa = PBXGroup;
+			children = (
+				091E3C9D2257C32C00E3EDA9 /* SalesInvoiceViewController.swift */,
+				091E3C9E2257C32C00E3EDA9 /* SalesInvoiceViewController.xib */,
+			);
+			path = "Sales Invoice";
+			sourceTree = "<group>";
+		};
 		0973298C2253D0820025234A /* Select Branch */ = {
 			isa = PBXGroup;
 			children = (
@@ -660,6 +677,8 @@
 				097329942253D4760025234A /* BranchTableViewCell.xib */,
 				09732997225452FC0025234A /* PersonalInfoTableViewCell.swift */,
 				09732998225452FC0025234A /* PersonalInfoTableViewCell.xib */,
+				0972AE8D2258A70800E70DE8 /* SalesInvoiceTableViewCell.swift */,
+				0972AE8E2258A70800E70DE8 /* SalesInvoiceTableViewCell.xib */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -928,6 +947,7 @@
 		14D44C8F223ABC04000AC818 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				091E3C9C2257C30D00E3EDA9 /* Sales Invoice */,
 				091E3C972256846E00E3EDA9 /* Order History Product List */,
 				14AE361A225667CF0064A15E /* HomeDelivery */,
 				091E3C8522551F0300E3EDA9 /* Place Order */,
@@ -1139,6 +1159,7 @@
 				14492C0F2243A43F004FFE9E /* masala.jpg in Resources */,
 				14158C852246A36B00188EB0 /* CartCell.xib in Resources */,
 				14AE361E225668840064A15E /* HomeDelivery1VC.xib in Resources */,
+				0972AE902258A70800E70DE8 /* SalesInvoiceTableViewCell.xib in Resources */,
 				1427CC7F223CFCAE0073E3D8 /* LoginVC.xib in Resources */,
 				091E3C8922551F2600E3EDA9 /* PlaceOrderViewController.xib in Resources */,
 				14956C02223D55C500945EA1 /* MenuViewCell.xib in Resources */,
@@ -1171,6 +1192,7 @@
 				14869639223E1FF200220954 /* AboutUsVC.xib in Resources */,
 				14B746FA223E6645007AE4BD /* NSDateTimeAgo.bundle in Resources */,
 				14956C10223D619600945EA1 /* LICENSE in Resources */,
+				091E3CA02257C32C00E3EDA9 /* SalesInvoiceViewController.xib in Resources */,
 				14F9EB0322434254001F3E40 /* CategoryFullRowCollectionViewCell.xib in Resources */,
 				14F69841224953B10081150C /* ProductItemTitleCell.xib in Resources */,
 				14158C812246995E00188EB0 /* ShippingDetailSecondsCell.xib in Resources */,
@@ -1337,6 +1359,7 @@
 				1427CC7A223CFC950073E3D8 /* OtpVC.swift in Sources */,
 				14B746E8223E6645007AE4BD /* CustomView.swift in Sources */,
 				14B746F7223E6645007AE4BD /* NSDictionary+Extension.m in Sources */,
+				0972AE8F2258A70800E70DE8 /* SalesInvoiceTableViewCell.swift in Sources */,
 				14AE361D225668840064A15E /* HomeDelivery1VC.swift in Sources */,
 				141D997A224FBE270067969A /* ProductAttribute.swift in Sources */,
 				148C1C6322511A8200DCC39F /* ActionSheetLocalePicker.m in Sources */,
@@ -1388,6 +1411,7 @@
 				14B72C922255A7BC00597176 /* Store.swift in Sources */,
 				14492C122243AEAC004FFE9E /* ProductCollectionViewCell.swift in Sources */,
 				14B746E6223E6645007AE4BD /* ColorCostants.swift in Sources */,
+				091E3C9F2257C32C00E3EDA9 /* SalesInvoiceViewController.swift in Sources */,
 				14B746EB223E6645007AE4BD /* CustomButton.swift in Sources */,
 				14492C1A2243B7BE004FFE9E /* ProductVC.swift in Sources */,
 				14B74691223E503E007AE4BD /* OrderHistoryCell.swift in Sources */,
