@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SalesInvoiceViewController: UIViewController {
+class SalesInvoiceViewController: BaseVC {
 
     @IBOutlet weak var imgOrderState: UIImageView!
     @IBOutlet weak var lblCustomerDetail: UILabel!

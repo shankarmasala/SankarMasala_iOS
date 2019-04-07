@@ -15,6 +15,7 @@
                 <outlet property="btnTotalAmount" destination="hJL-Ii-a6I" id="o3C-XN-TkW"/>
                 <outlet property="btnViewInvoice" destination="cpW-lD-tYU" id="g7F-sI-OAv"/>
                 <outlet property="lblDeliveryStatus" destination="bJ3-i9-WTy" id="gcD-YI-I2T"/>
+                <outlet property="lblLocation" destination="EYc-jq-Z9E" id="iIE-NF-Prr"/>
                 <outlet property="lblOrderDate" destination="eIu-Re-gUP" id="28K-zq-CzC"/>
                 <outlet property="lblOrderId" destination="xX8-Z5-YOH" id="ZjB-1u-xM2"/>
                 <outlet property="lblPaymentTypr" destination="SZe-uZ-hqL" id="PSr-gs-HVX"/>

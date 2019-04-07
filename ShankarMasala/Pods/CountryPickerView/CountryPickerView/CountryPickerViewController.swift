@@ -45,37 +45,21 @@ public class CountryPickerViewController: UITableViewController {
 extension CountryPickerViewController {
     
     func prepareTableItems()  {
-        
         if !showOnlyPreferredSection {
-            
             let countriesArray = countryPickerView.countries
             
-            var header = Set<String>()
-            countriesArray.forEach{
-                let name = $0.name
-                header.insert(String(name[name.startIndex]))
+            var groupedData = Dictionary<String, [Country]>(grouping: countriesArray) {
+                let name = $0.localizedName ?? $0.name
+                return String(name.capitalized[name.startIndex])
             }
-            
-            var data = [String: [Country]]()
-            
-            countriesArray.forEach({
-                let name = $0.name
-                let index = String(name[name.startIndex])
-                var dictValue = data[index] ?? [Country]()
-                dictValue.append($0)
-                
-                data[index] = dictValue
-            })
-            
-            // Sort the sections
-            data.forEach{ key, value in
-                data[key] = value.sorted(by: { (lhs, rhs) -> Bool in
+            groupedData.forEach{ key, value in
+                groupedData[key] = value.sorted(by: { (lhs, rhs) -> Bool in
                     return lhs.name < rhs.name
                 })
             }
             
-            sectionsTitles = header.sorted()
-            countries = data
+            countries = groupedData
+            sectionsTitles = groupedData.keys.sorted()
         }
         
         // Add preferred section if data is available
@@ -144,8 +128,9 @@ extension CountryPickerViewController {
         
         let country = isSearchMode ? searchResults[indexPath.row]
             : countries[sectionsTitles[indexPath.section]]![indexPath.row]
-        
-        let name = dataSource.showPhoneCodeInList ? "\(country.name) (\(country.phoneCode))" : country.name
+
+        let countryName = country.localizedName ?? country.name
+        let name = dataSource.showPhoneCodeInList ? "\(countryName) (\(country.phoneCode))" : countryName
         cell.imageView?.image = country.flag
         
         cell.flgSize = dataSource.cellImageViewSize
@@ -228,11 +213,14 @@ extension CountryPickerViewController: UISearchResultsUpdating {
             if showOnlyPreferredSection && hasPreferredSection,
                 let array = countries[dataSource.preferredCountriesSectionTitle!] {
                 indexArray = array
-            } else if let array = countries[String(text[text.startIndex])] {
+            } else if let array = countries[String(text.capitalized[text.startIndex])] {
                 indexArray = array
             }
 
-            searchResults.append(contentsOf: indexArray.filter({ $0.name.lowercased().hasPrefix(text.lowercased()) }))
+            searchResults.append(contentsOf: indexArray.filter({
+                let countryName = $0.localizedName ?? $0.name
+                return countryName.lowercased().hasPrefix(text.lowercased())
+            }))
         }
         tableView.reloadData()
     }

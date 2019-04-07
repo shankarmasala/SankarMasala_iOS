@@ -14,6 +14,10 @@
             <connections>
                 <outlet property="btnPayOnStore" destination="rQ2-tO-6ZW" id="uOi-Uf-rQn"/>
                 <outlet property="btnPayOnline" destination="ZPd-be-FAo" id="SdV-ou-hmR"/>
+                <outlet property="lblNetAmount" destination="rTX-cC-hO4" id="pHK-is-RSx"/>
+                <outlet property="lblShippingCharge" destination="I8k-WC-swc" id="nvM-1P-rjY"/>
+                <outlet property="lblTotalAmount" destination="85R-Tj-NKf" id="Aza-55-0Qe"/>
+                <outlet property="txtCouponCode" destination="Yge-re-WzJ" id="Gex-59-FaR"/>
                 <outlet property="txtViewComment" destination="Wtu-dj-r5V" id="0V8-4j-eJb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewConfirmationPopup" destination="lOv-ZC-5oL" id="XZq-VE-cMK"/>
@@ -32,19 +36,30 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3dG-m5-3Cq">
-                    <rect key="frame" x="16" y="56.5" width="186" height="40"/>
+                    <rect key="frame" x="16" y="56.5" width="318" height="40"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQ2-tO-6ZW">
-                            <rect key="frame" x="0.0" y="0.0" width="85" height="40"/>
-                            <state key="normal" title="Pay on store">
+                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQ2-tO-6ZW">
+                            <rect key="frame" x="0.0" y="0.0" width="151" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="   Pay on store" image="unselected-radio">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <state key="selected" title="   Pay on store" image="selected-radio"/>
+                            <connections>
+                                <action selector="btnPayOnStoreClicked:" destination="-1" eventType="touchUpInside" id="M04-TK-XdM"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPd-be-FAo">
-                            <rect key="frame" x="101" y="0.0" width="85" height="40"/>
-                            <state key="normal" title="Pay online">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPd-be-FAo">
+                            <rect key="frame" x="167" y="0.0" width="151" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="  Pay online" image="unselected-radio">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <state key="selected" title="  Pay online" image="selected-radio"/>
+                            <connections>
+                                <action selector="btnPayOnlineClicked:" destination="-1" eventType="touchUpInside" id="hRB-b3-P5x"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
@@ -209,7 +224,7 @@
                         <action selector="placeOrder:" destination="-1" eventType="touchUpInside" id="UFo-4K-c7T"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Comments" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wtu-dj-r5V">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Comment...." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wtu-dj-r5V">
                     <rect key="frame" x="8" y="339" width="304" height="100"/>
                     <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -318,4 +333,8 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
+    <resources>
+        <image name="selected-radio" width="40" height="40"/>
+        <image name="unselected-radio" width="37.5" height="37.5"/>
+    </resources>
 </document>

@@ -19,6 +19,11 @@ class PersonalInfoTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        txtFirstName.tag = 1
+        txtLastName.tag = 2
+        txtPhoneNumber.tag = 3
+        txtEmail.tag = 4
+        
         txtEmail.layer.borderWidth = 1.5
         txtEmail.layer.borderColor = UIColor(red: 225/255.0, green: 62/255.0, blue: 67/255.0, alpha: 1.0).cgColor
         

@@ -18,6 +18,15 @@ class PlaceOrderViewController: BaseVC {
     
     @IBOutlet weak var txtViewComment: UITextView!
     
+    @IBOutlet weak var lblNetAmount: UILabel!
+    @IBOutlet weak var lblShippingCharge: UILabel!
+    
+    @IBOutlet weak var txtCouponCode: UITextField!
+    
+    @IBOutlet weak var lblTotalAmount: UILabel!
+    
+    var dictOrderInfo : [String:Any] = [String:Any]()
+    
     class func initViewController() -> PlaceOrderViewController{
         let vc = PlaceOrderViewController(nibName: "PlaceOrderViewController", bundle: nil)
         return vc
@@ -26,6 +35,11 @@ class PlaceOrderViewController: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewCouponCode.isHidden = true
+        
+        lblNetAmount.text = "\(Cart.getTotal())"
+        lblShippingCharge.text = ""
+        txtViewComment.delegate = self
+        lblTotalAmount.text = "\(Cart.getTotal())"
         // Do any additional setup after loading the view.
     }
 
@@ -37,6 +51,7 @@ class PlaceOrderViewController: BaseVC {
     
     
     @IBAction func placeOrder(_ sender: UIButton) {
+        self.view.endEditing(true)
         viewConfirmationPopup.isHidden = false
     }
     
@@ -44,7 +59,22 @@ class PlaceOrderViewController: BaseVC {
         
         viewConfirmationPopup.isHidden = true
         
+        if btnPayOnStore.isSelected == true{
+            dictOrderInfo["PaymentType"] = "PayOnStore"
+        }else{
+            dictOrderInfo["PaymentType"] = "PayOnline"
+        }
+        
+        if txtViewComment.text.count > 0 && txtViewComment.text != "Comment...."{
+            dictOrderInfo["Comment"] = txtViewComment.text!
+        }
+        
+        if txtCouponCode.text!.count > 0{
+            dictOrderInfo["CouponCode"] = txtCouponCode.text!
+        }
+        
         let orderHistortyViewController = OrderHistoryProductListViewController.initViewController()
+        orderHistortyViewController.dictOrderInfo = dictOrderInfo
         self.navigationController?.pushViewController(orderHistortyViewController, animated: true)
         
     }
@@ -53,15 +83,36 @@ class PlaceOrderViewController: BaseVC {
         viewConfirmationPopup.isHidden = true;
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func btnPayOnlineClicked(_ sender: Any) {
+        btnPayOnStore.isSelected = false
+        btnPayOnline.isSelected = true
     }
-    */
+    
+    @IBAction func btnPayOnStoreClicked(_ sender: Any) {
+        btnPayOnline.isSelected = false
+        btnPayOnStore.isSelected = true
+    }
+}
 
+extension PlaceOrderViewController : UITextViewDelegate{
+    
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        
+        if textView.text == "Comment...."{
+            textView.text = ""
+        }
+    
+        return true
+    }
+    
+    func textViewDidChange(_ textView: UITextView){
+        
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text == ""{
+            textView.text = "Comment...."
+        }
+    }
+    
 }
