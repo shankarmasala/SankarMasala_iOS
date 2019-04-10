@@ -29,8 +29,8 @@ class ProductCollectionViewCell: UICollectionViewCell {
             let attributes =  pro.product_attribute.allObjects
             let att : ProductAttribute = attributes[0] as! ProductAttribute
             lblgm.text = "\(att.weight ?? "") \(att.unit ?? "")"
-            lblPrice.text = "RS \(att.selling_price?.floatValue ?? 0)"
-            lblCutPrice.text = "RS \(att.mrp?.floatValue ?? 0)"
+            lblPrice.text = "RS \(att.selling_price?.intValue ?? 0)"
+            lblCutPrice.text = "RS \(att.mrp?.intValue ?? 0)"
         }
         
        // newIcon.isHidden = true

@@ -8,6 +8,8 @@
 
 import UIKit
 
+import PlugNPlay
+
 class PlaceOrderViewController: BaseVC {
 
     @IBOutlet weak var viewCouponCode: UIView!
@@ -59,12 +61,6 @@ class PlaceOrderViewController: BaseVC {
         
         viewConfirmationPopup.isHidden = true
         
-        if btnPayOnStore.isSelected == true{
-            dictOrderInfo["PaymentType"] = "PayOnStore"
-        }else{
-            dictOrderInfo["PaymentType"] = "PayOnline"
-        }
-        
         if txtViewComment.text.count > 0 && txtViewComment.text != "Comment...."{
             dictOrderInfo["Comment"] = txtViewComment.text!
         }
@@ -73,10 +69,37 @@ class PlaceOrderViewController: BaseVC {
             dictOrderInfo["CouponCode"] = txtCouponCode.text!
         }
         
-        let orderHistortyViewController = OrderHistoryProductListViewController.initViewController()
-        orderHistortyViewController.dictOrderInfo = dictOrderInfo
-        self.navigationController?.pushViewController(orderHistortyViewController, animated: true)
-        
+        if btnPayOnStore.isSelected == true{
+            dictOrderInfo["PaymentType"] = "PayOnStore"
+            
+            let orderHistortyViewController = OrderHistoryProductListViewController.initViewController()
+            orderHistortyViewController.dictOrderInfo = dictOrderInfo
+            self.navigationController?.pushViewController(orderHistortyViewController, animated: true)
+            
+        }else{
+            dictOrderInfo["PaymentType"] = "PayOnline"
+            
+            let dict : PUMTxnParam = PUMTxnParam()
+            dict.amount = "\(Cart.getTotal())"
+            dict.phone = dictOrderInfo["PhoneNumber"] as? String ?? ""
+            dict.email = dictOrderInfo["EmailId"] as? String ?? ""
+            dict.environment = .test
+            dict.firstname = dictOrderInfo["FirstName"] as? String ?? ""
+            dict.key = "CBg72i"
+            dict.merchantid = "5312984"
+            dict.hashValue = "gkFdK0QB"
+            dict.txnID = "12321"
+            
+            PlugNPlay.presentPaymentViewController(withTxnParams: dict, on: self) { (responnse, error, extraParams) in
+                if let error = error{
+                    print(error.localizedDescription)
+                }else{
+                    print(responnse)
+                    print(extraParams)
+                }
+            }
+            
+        }
     }
     
     @IBAction func actionNo(_ sender: Any) {

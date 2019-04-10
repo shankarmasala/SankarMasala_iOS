@@ -84,6 +84,11 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - PayUIndia-Custom-Browser (5.8.1)
+  - PayUmoney_CoreSDK (3.7):
+    - PayUIndia-Custom-Browser (~> 5.8.1)
+  - PayUmoney_PnP (2.5.0):
+    - PayUmoney_CoreSDK
   - Presentr (1.9)
   - Protobuf (3.6.1)
   - ReachabilitySwift (4.3.0)
@@ -103,6 +108,7 @@ DEPENDENCIES:
   - IQKeyboardManager
   - LMGeocoder
   - MagicalRecord
+  - PayUmoney_PnP
   - Presentr
   - ReachabilitySwift
   - SDWebImage
@@ -128,6 +134,9 @@ SPEC REPOS:
     - LMGeocoder
     - MagicalRecord
     - nanopb
+    - PayUIndia-Custom-Browser
+    - PayUmoney_CoreSDK
+    - PayUmoney_PnP
     - Presentr
     - Protobuf
     - ReachabilitySwift
@@ -153,11 +162,14 @@ SPEC CHECKSUMS:
   LMGeocoder: cd104740f61098ef73272b5ed8a57ad63d23fdc7
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  PayUIndia-Custom-Browser: 27dc0dc866f817dcd96e9ffca8b002827a0912b2
+  PayUmoney_CoreSDK: 9c270b1ba54ae49ec57a2cbddc9fcd97e1d398e8
+  PayUmoney_PnP: d5ae7bf23e3e17c6fcd23e6763c2d78963eb318d
   Presentr: 7078d7eb5d1661ebeaae60c9e42a1e534de1b993
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   SDWebImage: ecc03494e973b93b80213649d32175f8d2d17d4d
 
-PODFILE CHECKSUM: cba6a7593f4a55203da74e0df47940b586a776ee
+PODFILE CHECKSUM: d155e2fc0ac1ef814d978fc9e840f685b3fd078a
 
 COCOAPODS: 1.5.3

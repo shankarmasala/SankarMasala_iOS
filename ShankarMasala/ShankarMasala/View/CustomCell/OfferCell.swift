@@ -32,14 +32,14 @@ class OfferCell: UITableViewCell {
 //        self.contentView.layer.borderWidth = 0.5
 //        self.contentView.clipsToBounds = true
         
-        lblTitle.text = pro.product_gujarati_name
-        lblGujratiTitle.text = pro.product_name
+        lblTitle.text = pro.product_name
+        lblGujratiTitle.text = pro.product_gujarati_name
         if pro.product_attribute.count > 0 {
             let attributes =  pro.product_attribute.allObjects
             let att : ProductAttribute = attributes[0] as! ProductAttribute
-            lblGm.text = "\(att.weight ?? "") \(att.unit ?? "")"
-            lblMrp.text = "RS \(att.selling_price?.floatValue ?? 0)"
-            lblOfferPrice.text = "RS \(att.mrp?.floatValue ?? 0)"
+            lblGm.text = "Packing : \(att.weight ?? "") \(att.unit ?? "")"
+            lblMrp.text = "MRP : RS \(att.selling_price?.floatValue ?? 0)"
+            lblOfferPrice.text = "Offer Price : RS \(att.mrp?.floatValue ?? 0)"
         }
         
         // newIcon.isHidden = true

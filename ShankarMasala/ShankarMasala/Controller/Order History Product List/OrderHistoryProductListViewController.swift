@@ -87,6 +87,13 @@ extension OrderHistoryProductListViewController : UITableViewDataSource{
             let url = kBaseUrl + kProductImageLoad + imagename
             cell.imgView.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "logo.png"))
         }
+        cell.lblPrice.text = "Selling Price : \(cart.productAttribute!.selling_price!.intValue)"
+        cell.lblMRP.text = "MRP : \(cart.productAttribute!.mrp!.intValue)"
+        cell.lblQty.text = "Qty : \(cart.qty!.intValue)"
+        cell.lblPacking.text = "Packing : \(cart.productAttribute!.weight!) \(cart.productAttribute!.unit!)"
+        
+        cell.selectionStyle = .none
+        
         return cell
     }
     

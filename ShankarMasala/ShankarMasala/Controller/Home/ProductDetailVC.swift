@@ -19,7 +19,7 @@ class ProductDetailVC: BaseVC {
     var attribute : ProductAttribute?
     var category : Categori?
     
-    
+    let yourViewBorder = CAShapeLayer()
     
     class func initViewController(pro : Product,cat : Categori) -> ProductDetailVC{
         let vc = ProductDetailVC(nibName: "ProductDetailVC", bundle: nil)
@@ -67,7 +67,7 @@ class ProductDetailVC: BaseVC {
         lblSave.layer.cornerRadius = 5.0
         lblSave.clipsToBounds = true
         
-        let yourViewBorder = CAShapeLayer()
+        
         yourViewBorder.strokeColor = UIColor.red.cgColor
         yourViewBorder.lineDashPattern = [4, 4]
         yourViewBorder.frame = lblSave.bounds
@@ -108,7 +108,10 @@ extension ProductDetailVC{
         
         Cart.addItem(pro: product!, att: attribute!, qtyy: selectedQty)
         let c = Cart.getAll()
-        print(c)
+//        print(c)
+        
+        Utils.showAlert(withMessage: "Item added to cart successfully....")
+        
     }
     
     @IBAction func BuyClicked() {
@@ -153,12 +156,19 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource{
             cell.btnCheckMark.isSelected = true
         }
         cell.btnCheckMark.addTarget(self, action: #selector(selectedCheckmark(btn:)), for: .touchUpInside)
-        cell.btnCheckMark.tag = indexPath.row - 1
+        cell.btnCheckMark.tag = indexPath.row
         cell.btnPlus.addTarget(self, action: #selector(plusClicked(btn:)), for: .touchUpInside)
         cell.btnPlus.tag = indexPath.row
         cell.btnMinus.addTarget(self, action: #selector(minusClicked(btn:)), for: .touchUpInside)
         cell.btnMinus.tag = indexPath.row
         cell.selectionStyle = .none
+        
+        if selectedQty == 0 && indexPath.row == 1{
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.selectedCheckmark(btn: cell.btnCheckMark)
+            }
+        }
+        
         return cell
     }
     
@@ -175,22 +185,47 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource{
         let qty : Int = Int((cell.btnTitle.titleLabel?.text)!)!
         let showQty : Int = qty + 1
         cell.btnTitle.setTitle(String(showQty), for: .normal)
-        
+        if let att = product?.product_attribute.allObjects[btn.tag - 1] as? ProductAttribute{
+            if attribute?.product_id == att.product_id{
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.selectedCheckmark(btn: cell.btnCheckMark)
+                }
+            }
+        }
     }
     @objc func minusClicked(btn : UIButton) {
         let cell : ProductItemCell = tblView.cellForRow(at: NSIndexPath(row: btn.tag, section: 0) as IndexPath) as! ProductItemCell
         let qty : Int = Int((cell.btnTitle.titleLabel?.text)!)!
+        
+        if qty == 1{
+            return
+        }
+        
         let showQty : Int = qty - 1
         cell.btnTitle.setTitle(String(showQty), for: .normal)
+        
+        if let att = product?.product_attribute.allObjects[btn.tag - 1] as? ProductAttribute{
+            if attribute?.product_id == att.product_id{
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.selectedCheckmark(btn: cell.btnCheckMark)
+                }
+                
+            }
+        }
     }
     
     @objc func selectedCheckmark(btn : UIButton) {
-        let cell : ProductItemCell = tblView.cellForRow(at: NSIndexPath(row: btn.tag + 1, section: 0) as IndexPath) as! ProductItemCell
+        let cell : ProductItemCell = tblView.cellForRow(at: NSIndexPath(row: btn.tag, section: 0) as IndexPath) as! ProductItemCell
         let qty : Int = Int((cell.btnTitle.titleLabel?.text)!)!
         selectedQty = qty
         let attributes = product?.product_attribute.allObjects
-        let att = attributes![btn.tag]
+        let att = attributes![btn.tag - 1]
         attribute = (att as! ProductAttribute)
+        print((attribute!.mrp!.intValue - attribute!.selling_price!.intValue) * selectedQty)
+        
+        lblSave.text = "You saved Rs. \((attribute!.mrp!.intValue - attribute!.selling_price!.intValue) * selectedQty)"
+        lblSave.layoutIfNeeded()
+        yourViewBorder.path = UIBezierPath(rect: lblSave.bounds).cgPath
         tblView.reloadData()
     }
     

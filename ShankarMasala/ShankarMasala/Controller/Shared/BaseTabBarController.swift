@@ -27,7 +27,7 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     @objc func updateCartCount() {
         let count = Cart.getCount()
-        lblCount.text = "\(count ?? 0)"
+//        lblCount.text = "\(count ?? 0)"
         
     }
     

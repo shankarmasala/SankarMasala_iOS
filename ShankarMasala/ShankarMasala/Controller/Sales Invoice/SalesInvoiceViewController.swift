@@ -20,8 +20,11 @@ class SalesInvoiceViewController: BaseVC {
     
     @IBOutlet weak var btnDownloadPDF: UIButton!
     
+    var dictOrderInfo : [String:Any] = [String:Any]()
     
     @IBOutlet weak var constrainTableHeight: NSLayoutConstraint!
+    
+    let arrCart : [Cart] = Cart.getAll() ?? []
     
     class func initViewController() -> SalesInvoiceViewController{
         let vc = SalesInvoiceViewController(nibName: "SalesInvoiceViewController", bundle: nil)
@@ -38,6 +41,10 @@ class SalesInvoiceViewController: BaseVC {
         tblView.register(UINib(nibName: "SalesInvoiceTableViewCell", bundle: nil), forCellReuseIdentifier: "SalesInvoiceTableViewCell")
 //        SalesInvoiceTableViewCell
         
+        let strInfo = "\(dictOrderInfo["FirstName"] as? String ?? "") \(dictOrderInfo["LastName"] as? String ?? "")\n \(dictOrderInfo["EmailId"] as? String ?? "")\n\(dictOrderInfo["PhoneNumber"] as? String ?? "")"
+        
+        lblCustomerDetail.text = strInfo
+        lblNetAmount.text = "\(Cart.getTotal())"
         // Do any additional setup after loading the view.
     }
     
@@ -76,7 +83,7 @@ class SalesInvoiceViewController: BaseVC {
 extension SalesInvoiceViewController : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return arrCart.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -87,9 +94,13 @@ extension SalesInvoiceViewController : UITableViewDataSource{
             cell.lblAmount.text = "Amount"
             cell.lblItemName.text = "Item Name"
         }else{
-            cell.lblItemName.text = "akjngsdkgnslknsbnsknbskbnvknblhb"
-            cell.lblAmount.text = "RS. 1000"
-            cell.lblQty.text = "10"
+            
+            let cart = arrCart[indexPath.row - 1]
+            
+            cell.lblItemName.text = cart.product?.product_name ?? ""
+            
+            cell.lblAmount.text = "\(cart.productAttribute!.selling_price!.intValue)"
+            cell.lblQty.text = "\(cart.qty!.intValue)"
         }
         
         cell.isUserInteractionEnabled = false

@@ -19,7 +19,7 @@ target 'ShankarMasala' do
  #pod 'ActionSheetPicker-3.0'
  pod 'CountdownLabel'
  pod 'LMGeocoder'
-# pod 'PayUmoney_PnP'
+ pod 'PayUmoney_PnP'
 
   # Pods for ShankarMasala
 
