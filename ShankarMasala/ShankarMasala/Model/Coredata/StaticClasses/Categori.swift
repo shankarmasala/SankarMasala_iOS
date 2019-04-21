@@ -12,8 +12,18 @@ open class Categori: _Categori {
         return mapping
     }
     
+    class func getParantAll() -> [Categori]? {
+        let pre = NSPredicate(format: "parentCategoryId == 0")
+        return Categori.mr_findAllSorted(by: "image_type", ascending: false, with: pre) as? [Categori]
+    }
+    
     class func getAll() -> [Categori]? {
-        return Categori.mr_findAllSorted(by: "display_order", ascending: true) as? [Categori]
+        return Categori.mr_findAllSorted(by: "image_type", ascending: false) as? [Categori]
+    }
+    
+    class func getChildsById(cate : Categori) -> [Categori]? {
+        let pre = NSPredicate(format: "parentCategoryId == %@",(cate.entityid?.stringValue)!)
+        return Categori.mr_findAllSorted(by: "image_type", ascending: false, with: pre) as? [Categori]
     }
     
     class func newEntity() -> Categori? {

@@ -81,7 +81,7 @@ extension Manager {
                     
                     if let dataArray = dict["data"] as? [[String : Any]] {
                         MagicalRecord.save(blockAndWait: { (localContext:NSManagedObjectContext) in
-//                            Categori.mr_truncateAll(in: localContext)
+                            Categori.mr_truncateAll(in: localContext)
                             let arr = FEMDeserializer.collection(fromRepresentation: dataArray, mapping: Categori.defaultMapping(), context: localContext)
                             DispatchQueue.main.async {
                                 block(arr,"")
@@ -96,7 +96,37 @@ extension Manager {
         request.startRequest()
     }
     
-    class func loadAllProductByCategory(block : @escaping ItemLoadedBlock) {
+    class func loadCategoryById(cate : Categori , block : @escaping ItemLoadedBlock) {
+        let request = Request.init(url: "\(kBaseUrl)\(kGetCategoryById)", method: RequestMethod(rawValue: "POST")!) { (success:Bool, request:Request, message:NSString) -> (Void) in
+            if request.isSuccess {
+                let arr = request.serverData["data"] as! [[String : Any]]
+                for dict in arr{
+                    if dict["status"] as! String == "False"{
+                        block("",dict["message"] as! String)
+                        return
+                    }
+                    
+                    if let dataArray = dict["data"] as? [[String : Any]] {
+                        MagicalRecord.save(blockAndWait: { (localContext:NSManagedObjectContext) in
+                           // Categori.mr_truncateAll(in: localContext)
+                            let arr = FEMDeserializer.collection(fromRepresentation: dataArray, mapping: Categori.defaultMapping(), context: localContext)
+                            DispatchQueue.main.async {
+                                block(arr,"")
+                            }
+                        })
+                    } else {
+                        block("",message as String)
+                    }
+                }
+            }
+        }
+        let entityid = "\(String(describing: cate.entityid!))"
+        
+        request.setParameter(entityid, forKey: "id")
+        request.startRequest()
+    }
+    
+    class func loadAllProductByCategory(cat : Categori , block : @escaping ItemLoadedBlock) {
         let request = Request.init(url: "\(kBaseUrl)\(kAllProduct)", method: RequestMethod(rawValue: "POST")!) { (success:Bool, request:Request, message:NSString) -> (Void) in
             if request.isSuccess {
                 let arr = request.serverData["data"] as! [[String : Any]]
@@ -119,8 +149,8 @@ extension Manager {
                 }
             }
         }
-//        let categoryid = "\(String(describing: cat.entityid!))"
-//        request.setParameter(categoryid, forKey: "categoryId")
+        let categoryid = "\(String(describing: cat.entityid!))"
+        request.setParameter(categoryid, forKey: "categoryId")
         request.startRequest()
     }
     
@@ -257,6 +287,50 @@ extension Manager {
             }
         }
         request.setParameter(stateid, forKey: "stateId")
+        request.startRequest()
+    }
+    
+    class func loadAllOrders(block : @escaping ItemLoadedBlock) {
+        let request = Request.init(url: "\(kBaseUrl)\(kAllOrders)", method: RequestMethod(rawValue: "POST")!) { (success:Bool, request:Request, message:NSString) -> (Void) in
+            if request.isSuccess {
+                let arr = request.serverData["data"] as! [[String : Any]]
+                for dict in arr{
+                    if dict["status"] as! String == "False"{
+                        block("",dict["message"] as! String)
+                        return
+                    }
+                    
+                    if let dataArray = dict["data"] as? [[String : Any]] {
+                        block(dataArray,"")
+                    } else {
+                        
+                    }
+                }
+            }
+        }
+//        request.setParameter(stateid, forKey: "userId")
+        request.startRequest()
+    }
+    
+    class func loadOrderByInvoiceId(invoceid : String , block : @escaping ItemLoadedBlock) {
+        let request = Request.init(url: "\(kBaseUrl)\(kFetchOrder)", method: RequestMethod(rawValue: "POST")!) { (success:Bool, request:Request, message:NSString) -> (Void) in
+            if request.isSuccess {
+                let arr = request.serverData["data"] as! [[String : Any]]
+                for dict in arr{
+                    if dict["status"] as! String == "False"{
+                        block("",dict["message"] as! String)
+                        return
+                    }
+                    
+                    if let dataObject = dict["data"] as? [String : Any] {
+                       block(dataObject,"")
+                    } else {
+                        block("",message as String)
+                    }
+                }
+            }
+        }
+        request.setParameter(invoceid, forKey: "invoiceId")
         request.startRequest()
     }
     

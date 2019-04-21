@@ -9,34 +9,162 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutUsVC" customModule="ShankarMasala" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="webView" destination="CFz-TP-vHe" id="hPO-ya-RaQ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="616"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CFz-TP-vHe">
-                    <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="VJI-Zt-7PB"/>
-                    </connections>
-                </webView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NcF-9f-hmi">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="616"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVH-mQ-mQa">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="589.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABOUT US" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgY-tG-nDc">
+                                    <rect key="frame" x="17" y="41" width="77" height="19"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="19" id="NCk-1W-BNQ"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omi-Np-SgC">
+                                    <rect key="frame" x="17" y="65" width="286" height="112.5"/>
+                                    <string key="text">With the philosophy of ‘reaching our customer's heart through their taste buds’, we at Shankar have been successful in taking the Indian spices and taste to millions of homes across the globe. We take pride in the fact that Shankar has established India’s heritage across the world through Indian food, the Indian way.
+</string>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The brand Shankar has been a pioneer in many food related offerings ranging from basic masala’s to instant mixes." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4MB-wu-m2e">
+                                    <rect key="frame" x="17" y="182.5" width="286" height="42.5"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjx-Oi-vFj">
+                                    <rect key="frame" x="17" y="244" width="286" height="70.5"/>
+                                    <string key="text">In 2016 Shankar Masala took another significant step in diversifying its portfolio by entering the ‘snack foods’ segment. Shankar has launched a mouth watering range of snacks food like wafers, namkeens and fryums in a range of flavours.</string>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VISION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PN5-g0-UAc">
+                                    <rect key="frame" x="17" y="335" width="52" height="19"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="19" id="JNi-Nh-55c"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glD-0o-dNg">
+                                    <rect key="frame" x="17" y="359" width="286" height="42.5"/>
+                                    <string key="text">To be unequivocally known as the Monarch of Spices in the Land of Spices, India.
+</string>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MISSON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDF-Bg-yvS">
+                                    <rect key="frame" x="17" y="410" width="61" height="19"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="19" id="ixk-jf-iJB"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRv-na-J5e">
+                                    <rect key="frame" x="17" y="437" width="286" height="28.5"/>
+                                    <string key="text">●	To maintain the stronghold of Indian spices across the world.</string>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmu-X7-AU8">
+                                    <rect key="frame" x="17" y="466" width="286" height="28.5"/>
+                                    <string key="text">●	To introduce Indian Spices in to cuisines hitherto uninitiated into them</string>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYg-gw-XHy">
+                                    <rect key="frame" x="17" y="497" width="286" height="42.5"/>
+                                    <string key="text">●	To device newer technology and methods to reach quality spices in the quickest possible time to our customers.</string>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="cYg-gw-XHy" secondAttribute="bottom" constant="50" id="1VO-uy-mh8"/>
+                                <constraint firstAttribute="trailing" secondItem="glD-0o-dNg" secondAttribute="trailing" constant="17" id="4Zj-DS-wKo"/>
+                                <constraint firstAttribute="trailing" secondItem="cjx-Oi-vFj" secondAttribute="trailing" constant="17" id="5ft-jv-E0E"/>
+                                <constraint firstItem="Omi-Np-SgC" firstAttribute="leading" secondItem="jVH-mQ-mQa" secondAttribute="leading" constant="17" id="9Xo-j6-aUs"/>
+                                <constraint firstItem="cRv-na-J5e" firstAttribute="top" secondItem="VDF-Bg-yvS" secondAttribute="bottom" constant="8" id="Aap-Cr-fed"/>
+                                <constraint firstItem="PN5-g0-UAc" firstAttribute="top" secondItem="cjx-Oi-vFj" secondAttribute="bottom" constant="20.5" id="Evn-dM-1Ii"/>
+                                <constraint firstAttribute="trailing" secondItem="Omi-Np-SgC" secondAttribute="trailing" constant="17" id="NVk-Yu-2nv"/>
+                                <constraint firstItem="4MB-wu-m2e" firstAttribute="leading" secondItem="jVH-mQ-mQa" secondAttribute="leading" constant="17" id="OaP-d6-HF1"/>
+                                <constraint firstItem="cRv-na-J5e" firstAttribute="leading" secondItem="jVH-mQ-mQa" secondAttribute="leading" constant="17" id="WPO-pp-2vf"/>
+                                <constraint firstItem="cYg-gw-XHy" firstAttribute="top" secondItem="Nmu-X7-AU8" secondAttribute="bottom" constant="2.5" id="XuK-es-CFE"/>
+                                <constraint firstAttribute="trailing" secondItem="4MB-wu-m2e" secondAttribute="trailing" constant="17" id="ZkE-kZ-xgD"/>
+                                <constraint firstAttribute="trailing" secondItem="cYg-gw-XHy" secondAttribute="trailing" constant="17" id="aVn-Qo-dAt"/>
+                                <constraint firstItem="PN5-g0-UAc" firstAttribute="leading" secondItem="jVH-mQ-mQa" secondAttribute="leading" constant="17" id="bKW-Jb-Usq"/>
+                                <constraint firstItem="glD-0o-dNg" firstAttribute="leading" secondItem="jVH-mQ-mQa" secondAttribute="leading" constant="17" id="cc4-ba-SiF"/>
+                                <constraint firstItem="wgY-tG-nDc" firstAttribute="leading" secondItem="jVH-mQ-mQa" secondAttribute="leading" constant="17" id="eBp-aF-jIC"/>
+                                <constraint firstItem="cjx-Oi-vFj" firstAttribute="top" secondItem="4MB-wu-m2e" secondAttribute="bottom" constant="19" id="hMV-XV-AhW"/>
+                                <constraint firstItem="4MB-wu-m2e" firstAttribute="top" secondItem="Omi-Np-SgC" secondAttribute="bottom" constant="5" id="kqp-Ts-YRJ"/>
+                                <constraint firstItem="Nmu-X7-AU8" firstAttribute="leading" secondItem="jVH-mQ-mQa" secondAttribute="leading" constant="17" id="lCt-7K-991"/>
+                                <constraint firstItem="glD-0o-dNg" firstAttribute="top" secondItem="PN5-g0-UAc" secondAttribute="bottom" constant="5" id="lug-Fj-eZ4"/>
+                                <constraint firstItem="Omi-Np-SgC" firstAttribute="top" secondItem="wgY-tG-nDc" secondAttribute="bottom" constant="5" id="nEd-P3-WZv"/>
+                                <constraint firstItem="wgY-tG-nDc" firstAttribute="top" secondItem="jVH-mQ-mQa" secondAttribute="top" constant="41" id="oXj-3Q-HKl"/>
+                                <constraint firstItem="VDF-Bg-yvS" firstAttribute="top" secondItem="glD-0o-dNg" secondAttribute="bottom" constant="8.5" id="pLj-9g-ifD"/>
+                                <constraint firstAttribute="trailing" secondItem="cRv-na-J5e" secondAttribute="trailing" constant="17" id="pdG-n0-2vq"/>
+                                <constraint firstItem="VDF-Bg-yvS" firstAttribute="leading" secondItem="jVH-mQ-mQa" secondAttribute="leading" constant="17" id="qCV-ca-vOh"/>
+                                <constraint firstItem="cYg-gw-XHy" firstAttribute="leading" secondItem="jVH-mQ-mQa" secondAttribute="leading" constant="17" id="qVs-NF-uyW"/>
+                                <constraint firstItem="cjx-Oi-vFj" firstAttribute="leading" secondItem="jVH-mQ-mQa" secondAttribute="leading" constant="17" id="r9Z-eq-7hY"/>
+                                <constraint firstItem="Nmu-X7-AU8" firstAttribute="top" secondItem="cRv-na-J5e" secondAttribute="bottom" constant="0.5" id="w3T-Ru-lkb"/>
+                                <constraint firstAttribute="trailing" secondItem="Nmu-X7-AU8" secondAttribute="trailing" constant="17" id="zfw-wE-gMH"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="jVH-mQ-mQa" firstAttribute="leading" secondItem="NcF-9f-hmi" secondAttribute="leading" id="2ar-bX-dtD"/>
+                        <constraint firstAttribute="trailing" secondItem="jVH-mQ-mQa" secondAttribute="trailing" id="I5U-Hm-3p7"/>
+                        <constraint firstItem="jVH-mQ-mQa" firstAttribute="top" secondItem="NcF-9f-hmi" secondAttribute="top" id="dB0-7B-vci"/>
+                        <constraint firstAttribute="bottom" secondItem="jVH-mQ-mQa" secondAttribute="bottom" id="za1-jO-pz3"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="CFz-TP-vHe" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Y4y-lr-yjk"/>
-                <constraint firstItem="CFz-TP-vHe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aQo-C9-gBI"/>
-                <constraint firstItem="CFz-TP-vHe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="c0k-Ff-WCS"/>
-                <constraint firstItem="CFz-TP-vHe" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="poQ-FU-2LC"/>
+                <constraint firstItem="NcF-9f-hmi" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="1Wx-0T-pWx"/>
+                <constraint firstItem="jVH-mQ-mQa" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" priority="250" id="4Tw-Q4-1Ye"/>
+                <constraint firstItem="NcF-9f-hmi" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Vz4-IJ-qrC"/>
+                <constraint firstItem="jVH-mQ-mQa" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Wxc-cv-H7y"/>
+                <constraint firstItem="NcF-9f-hmi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dmf-Bd-6XZ"/>
+                <constraint firstItem="NcF-9f-hmi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nIE-MM-HOG"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-185.625" y="175"/>
         </view>
     </objects>
 </document>

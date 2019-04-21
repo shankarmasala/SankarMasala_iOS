@@ -74,7 +74,9 @@ extension OrderHistoryProductListViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrCart.count;
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
+        return UITableView.automaticDimension
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderHistoryTableViewCell", for: indexPath) as! OrderHistoryTableViewCell
         
@@ -87,7 +89,7 @@ extension OrderHistoryProductListViewController : UITableViewDataSource{
             let url = kBaseUrl + kProductImageLoad + imagename
             cell.imgView.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "logo.png"))
         }
-        cell.lblPrice.text = "Selling Price : \(cart.productAttribute!.selling_price!.intValue)"
+        cell.lblPrice.text = "Offer Price : Rs.\(cart.productAttribute!.selling_price!.intValue)"
         cell.lblMRP.text = "MRP : \(cart.productAttribute!.mrp!.intValue)"
         cell.lblQty.text = "Qty : \(cart.qty!.intValue)"
         cell.lblPacking.text = "Packing : \(cart.productAttribute!.weight!) \(cart.productAttribute!.unit!)"

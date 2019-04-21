@@ -3,7 +3,7 @@ import UIKit
 
 class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
     
-    var lblCount = UILabel(frame: CGRect(x: UIScreen.main.bounds.width - 48, y: UIScreen.main.bounds.height - 80, width: 15, height: 15))
+    var lblCount = UILabel(frame: CGRect(x: UIScreen.main.bounds.width - 48, y:0, width: 15, height: 15))
     
     class func initViewController() -> BaseTabBarController {
         let controller = BaseTabBarController()
@@ -18,16 +18,29 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
         lblCount.font = UIFont(name: lblCount.font.familyName, size: 10)
         lblCount.textAlignment = .center
         lblCount.textColor = UIColor.red
-        self.view.addSubview(lblCount)
+        
         
         self.delegate = self
         setViews()
+//        lblCount.frame = CGRect(x: , y:7, width: 15, height: 15)
         self.perform(#selector(updateCartCount), with: nil, afterDelay: 1.0)
+        let item : UITabBarItem = self.tabBar.items![4]
+        item.badgeColor = UIColor.clear
+        item.badgeValue = ""
     }
     
     @objc func updateCartCount() {
-        let count = Cart.getCount()
-//        lblCount.text = "\(count ?? 0)"
+        let count  = Cart.getCount()
+        //lblCount.text = "\(count ?? 0)"
+        let item : UITabBarItem = self.tabBar.items![4]
+        item.badgeValue = "\(count ?? 0)"
+        if count! <= 0 {
+            item.badgeValue = ""
+            item.badgeColor = UIColor.clear
+        }else{
+            item.badgeColor = UIColor.red
+        }
+        
         
     }
     

@@ -11,10 +11,10 @@ open class Cart: _Cart {
     class func getCount() -> Int? {
         var count : Int = 0
         let carts = Cart.getAll()
-        for c in carts! {
-            count = count + (c.qty?.intValue)!
-        }
-        return count
+//        for c in carts! {
+//            count = count + (c.qty?.intValue)!
+//        }
+        return carts?.count
     }
     
     class func newEntity() -> Cart? {
@@ -100,7 +100,7 @@ extension Cart{
         let arr = Cart.getAll()
         for c in arr! {
             let qty : Float = (c.qty?.floatValue)!
-            total = total + ((c.productAttribute?.selling_price?.floatValue)! * qty)
+            total = total + ((c.productAttribute?.selling_price?.floatValue) ?? 0 * qty)
         }
         return total
     }

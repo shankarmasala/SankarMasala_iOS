@@ -28,6 +28,15 @@ class SelectBranchViewController: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if AccountManager.instance().activeAccount != nil {
+            let acc = AccountManager.instance().activeAccount!
+            strLastName = acc.last_name
+            strFirstName = acc.first_name
+            strPhoneNumber = acc.mobile_number
+            strEmailId = acc.email
+            
+        }
 
         tblView.delegate = self
         tblView.dataSource = self

@@ -23,17 +23,17 @@ class OfferVC: BaseVC {
         self.isBackButton = false
         super.viewDidLoad()
         
-        LoaderView.displaySpinner()
-        Manager.loadAllProductByCategory { (result, message) -> (Void) in
-            LoaderView.removeSpinner()
-            if message.count > 0 {
-                Utils.showAlert(withMessage: message)
-                return
-            }
-            self.arrProduct = Product.getOfferAll()!
-            self.tblView.reloadData()
-            
-        }
+       // LoaderView.displaySpinner()
+//        Manager.loadAllProductByCategory { (result, message) -> (Void) in
+//            LoaderView.removeSpinner()
+//            if message.count > 0 {
+//                Utils.showAlert(withMessage: message)
+//                return
+//            }
+//            self.arrProduct = Product.getOfferAll()!
+//            self.tblView.reloadData()
+//
+//        }
         
         tblView.tableFooterView = UIView()
         tblView.register(UINib(nibName: "OfferCell", bundle: nil), forCellReuseIdentifier: "OfferCell")

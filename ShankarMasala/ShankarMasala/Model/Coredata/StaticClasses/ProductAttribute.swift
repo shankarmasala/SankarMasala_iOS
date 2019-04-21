@@ -29,4 +29,18 @@ open class ProductAttribute: _ProductAttribute {
         self.mr_deleteEntity()
         NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
     }
+    class func smallestPrice(pro : Product) -> ProductAttribute {
+        let attributes =  pro.product_attribute.allObjects
+        let arr : [ProductAttribute] = attributes as! [ProductAttribute]
+        let small = arr.min { $0.selling_price! < $1.selling_price! }
+        return small!
+    }
+    
+    class func sortedArr(pro : Product) -> [ProductAttribute] {
+        let attributes =  pro.product_attribute.allObjects
+        let arr : [ProductAttribute] = attributes as! [ProductAttribute]
+        let small = arr.sorted { $0.selling_price! < $1.selling_price! }
+        return small
+    }
+    
 }

@@ -29,6 +29,16 @@ class ProductItemCell: UITableViewCell {
         lblOfferPrice.text = "Rs \(att.selling_price?.floatValue ?? 0)"
         lblPacking.text = "\(String(describing: att.weight!)) \(String(describing: att.unit!))"
         
+        let lineView = UIView(
+            frame: CGRect(x: 0,
+                          y: lblMRP.bounds.size.height / 2,
+                          width: lblMRP.bounds.size.width,
+                          height: 1
+            )
+        )
+        lineView.backgroundColor = UIColor.red
+        lblMRP.addSubview(lineView)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -26,8 +26,23 @@ class ProductVC: BaseVC {
         self.title = category?.category_name
         
         initCollectionView()
-        self.arrProduct = Product.getAllByCategory(cat: self.category!)!
-        self.collection.reloadData()
+        
+        
+        LoaderView.displaySpinner()
+        Manager.loadAllProductByCategory(cat: category!) { (result, message) -> (Void) in
+            LoaderView.removeSpinner()
+            if message.count > 0 {
+                Utils.showAlert(withMessage: message)
+                return
+            }
+            self.arrProduct = Product.getAllByCategory(cat: self.category!)!
+            self.collection.reloadData()
+            
+        }
+        
+        
+//        self.arrProduct = Product.getAllByCategory(cat: self.category!)!
+//        self.collection.reloadData()
         
         //LoaderView.displaySpinner()
        

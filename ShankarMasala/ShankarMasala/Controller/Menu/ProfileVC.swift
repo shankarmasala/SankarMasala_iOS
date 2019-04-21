@@ -30,12 +30,12 @@ class ProfileVC: BaseVC, CLLocationManagerDelegate {
         self.isBackButton = true
         super.viewDidLoad()
         
-//        let acc = AccountManager.instance().activeAccount!
-//        lblFirstName.text = acc.first_name
-//        lblLastName.text = acc.last_name
-//        lblEmail.text = acc.email
-//        lblAddress.text = acc.address
-//        lblMobileNumber.text = acc.mobile_number
+        let acc = AccountManager.instance().activeAccount!
+        lblFirstName.text = acc.first_name
+        lblLastName.text = acc.last_name
+        lblEmail.text = acc.email
+        lblAddress.text = acc.address
+        lblMobileNumber.text = acc.mobile_number
         
         // You can set your google API key here
         LMGeocoder.sharedInstance().googleAPIKey = "AIzaSyDm661ykrQCv2M2DJ16MxAbgSH9LF-18_g"
@@ -62,7 +62,7 @@ class ProfileVC: BaseVC, CLLocationManagerDelegate {
             
             // Start to reverse geocode
             LMGeocoder.sharedInstance().cancelGeocode()
-            LMGeocoder.sharedInstance().reverseGeocodeCoordinate(coordinate, service: .appleService) { (results: Array<LMAddress>?, error: Error?) in
+            LMGeocoder.sharedInstance().reverseGeocodeCoordinate(coordinate, service: .googleService) { (results: Array<LMAddress>?, error: Error?) in
                 
                                                                         // Parse formatted address
                                                                         var formattedAddress: String? = "-"

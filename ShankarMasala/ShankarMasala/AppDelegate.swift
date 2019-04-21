@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         setupCoredata()
+      //  self.clearDatabase()
         NetworkActivityLogger.shared.startLogging()
         NetworkActivityLogger.shared.level = .debug
         
@@ -59,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.showLogin()
         }
         
-        showHome()
+      //  showHome()
         
         
         
@@ -71,6 +72,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func clearDatabase(){
         MagicalRecord.save(blockAndWait: { (localContext:NSManagedObjectContext) in
+            CityDelivery.mr_truncateAll(in: localContext)
+            CountryDelivery.mr_truncateAll(in: localContext)
+            StateDelivery.mr_truncateAll(in: localContext)
+            Store.mr_truncateAll(in: localContext)
+            Categori.mr_truncateAll(in: localContext)
+            Product.mr_truncateAll(in: localContext)
+            ProductAttribute.mr_truncateAll(in: localContext)
+            ShippingMethods.mr_truncateAll(in: localContext)
+            State.mr_truncateAll(in: localContext)
+            Cart.mr_truncateAll(in: localContext)
+            Order.mr_truncateAll(in: localContext)
+            
         })
     }
     
@@ -99,6 +112,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     @objc func logout() {
         AccountManager.instance().activeAccount = nil
+        self.clearDatabase()
         showLogin()
     }
     

@@ -10,7 +10,7 @@ import UIKit
 
 class OrderHistoryVC: BaseVC {
     
-    var arrary : [String] = [String]()
+    var arrary : [[String : Any]] = [[String : Any]]()
     @IBOutlet weak var tblView : UITableView!
     
     class func initViewController() -> OrderHistoryVC {
@@ -22,27 +22,23 @@ class OrderHistoryVC: BaseVC {
     override func viewDidLoad() {
         self.isBackButton = true
         super.viewDidLoad()
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
-        arrary.append("A")
         
         tblView.tableFooterView = UIView()
         tblView.register(UINib(nibName: "OrderHistoryCell", bundle: nil), forCellReuseIdentifier: "OrderHistoryCell")
+        
+        LoaderView.displaySpinner()
+        Manager.loadAllOrders { (result, message) -> (Void) in
+            LoaderView.removeSpinner()
+            if message.count > 0 {
+                Utils.showAlert(withMessage: message)
+                return
+            }
+            self.arrary = result as! [[String : Any]]
+            self.tblView.reloadData()
+            
+        }
+        
+       
         //tblView.rowHeight = UITableView.automaticDimension
         
         // Do any additional setup after loading the view.
@@ -68,10 +64,20 @@ extension OrderHistoryVC: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : OrderHistoryCell = tableView.dequeueReusableCell(withIdentifier: "OrderHistoryCell", for: indexPath) as! OrderHistoryCell
-        cell.lblStatus.text = "Pending"
-        cell.lblOrderId.text = "1234"
-        cell.lblOrderdate.text = "12-12-1989"
-        cell.lblTotalPaid.text = "$12,000"
+        let order : [String : Any] = arrary[indexPath.row]
+        
+        if let order_status : Int =  order["invoiceId"] as? Int{
+            cell.lblStatus.text = Utils.getOrderStatus(statusCode: order_status)
+        }
+        
+        if let invoice_number : Int =  order["invoiceId"] as? Int{
+            cell.lblOrderId.text = String(invoice_number)
+        }
+        
+       
+        cell.lblOrderdate.text = DateUtils.getStringFormat(str: order["createdDate"] as! String)
+            //"12-12-1989"
+        cell.lblTotalPaid.text = "Rs.\(String(describing: order["total_price"]!))"
         cell.selectionStyle = .none
         return cell
     }
@@ -82,8 +88,17 @@ extension OrderHistoryVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tblView.deselectRow(at: indexPath, animated: true)
-        let vc = OrderProductVC.initViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        let order = arrary[indexPath.row]
+        LoaderView.displaySpinner()
+        let invoice_number : Int =  (order["invoiceId"] as? Int)!
+        Manager.loadOrderByInvoiceId(invoceid:String(invoice_number)) { (result, message) -> (Void) in
+            LoaderView.removeSpinner()
+            let vc = OrderProductVC.initViewController()
+            vc.dictOrderInfo = result as! [String : Any]
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        
     }
     
     

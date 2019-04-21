@@ -43,6 +43,16 @@ class HomeDelivery1VC: BaseVC {
                  self.txtCountry.text = cc.name
             }
         }
+        
+        if AccountManager.instance().activeAccount != nil {
+            let acc = AccountManager.instance().activeAccount!
+            txtLastname.text = acc.last_name
+            txtFirstname.text = acc.first_name
+            txtMobilename.text = acc.mobile_number
+            txtEmailname.text = acc.email
+            
+        }
+        
 
         // Do any additional setup after loading the view.
     }

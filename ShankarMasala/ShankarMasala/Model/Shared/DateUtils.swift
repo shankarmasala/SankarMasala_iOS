@@ -4,12 +4,10 @@ import UIKit
 class DateUtils: NSObject {
     
     class func getStringFormat(str:String) -> String {        
-        let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        
         let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "dd/M/yy"
-        let date: Date = dateFormatterGet.date(from: str)!
-        print(date)
+        dateFormatterPrint.dateFormat = "dd-MM-yyyy"
+        let date: Date = NSDate.getFromJSONString(str)
         return dateFormatterPrint.string(from: date)
     }
     
@@ -17,7 +15,7 @@ class DateUtils: NSObject {
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "dd/MM/yyyy"
+        dateFormatterPrint.dateFormat = "dd-MM-yyyy"
         return dateFormatterPrint.string(from: date)
     }
     

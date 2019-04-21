@@ -10,7 +10,6 @@ import UIKit
 
 class AboutUsVC: BaseVC {
 
-    @IBOutlet weak var webView : UIWebView!
     
     class func initViewController() -> AboutUsVC {
         let vc = AboutUsVC.init(nibName: "AboutUsVC", bundle: nil)
@@ -21,10 +20,7 @@ class AboutUsVC: BaseVC {
     override func viewDidLoad() {
         self.isBackButton = true
         super.viewDidLoad()
-        let url = URL(string: "https://www.google.co.in")
-        let requestObj = URLRequest(url: url! as URL)
-        webView.loadRequest(requestObj)
-        // Do any additional setup after loading the view.
+
     }
     
     
@@ -40,11 +36,4 @@ class AboutUsVC: BaseVC {
     
 }
 
-extension AboutUsVC : UIWebViewDelegate{
-    func webViewDidStartLoad(_ webView: UIWebView) {
-        LoaderView.displaySpinner()
-    }
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        LoaderView.removeSpinner()
-    }
-}
+

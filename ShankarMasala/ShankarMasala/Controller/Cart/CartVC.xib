@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dce-2L-0h4">
-                    <rect key="frame" x="0.0" y="25" width="320" height="374"/>
+                    <rect key="frame" x="0.0" y="25" width="320" height="394"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Nee-f1-Jqp"/>
@@ -31,10 +31,10 @@
                     </connections>
                 </tableView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cao-Cw-lqt">
-                    <rect key="frame" x="0.0" y="440" width="320" height="40"/>
+                    <rect key="frame" x="0.0" y="450" width="320" height="30"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XI7-SV-VBS">
-                            <rect key="frame" x="0.0" y="0.0" width="159.5" height="40"/>
+                            <rect key="frame" x="0.0" y="0.0" width="159.5" height="30"/>
                             <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <state key="normal" title="Add More Item">
@@ -45,8 +45,8 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TF1-dC-djl">
-                            <rect key="frame" x="160.5" y="0.0" width="159.5" height="40"/>
-                            <color key="backgroundColor" red="0.88235294119999996" green="0.24313725489999999" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <rect key="frame" x="160.5" y="0.0" width="159.5" height="30"/>
+                            <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <state key="normal" title="Next">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -57,30 +57,29 @@
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="K5t-BJ-aCb"/>
+                        <constraint firstAttribute="height" constant="30" id="K5t-BJ-aCb"/>
                     </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MMe-KU-UKF">
-                    <rect key="frame" x="0.0" y="399" width="320" height="40"/>
+                    <rect key="frame" x="0.0" y="419" width="320" height="30"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GRAND TOTAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KN-11-8oX">
-                            <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
+                            <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
                             <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HR-wd-3I9">
-                            <rect key="frame" x="160" y="0.0" width="160" height="40"/>
+                            <rect key="frame" x="160" y="0.0" width="160" height="30"/>
                             <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                             <state key="normal" title="Rs. 600">
-                                <color key="titleColor" red="0.90980392160000001" green="0.4431372549" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="dr0-2F-cib"/>
-                        <constraint firstAttribute="height" constant="40" id="w8Y-Yg-LqP"/>
+                        <constraint firstAttribute="height" constant="30" id="w8Y-Yg-LqP"/>
                     </constraints>
                 </stackView>
             </subviews>
@@ -100,7 +99,7 @@
                 <constraint firstItem="dce-2L-0h4" firstAttribute="top" secondItem="PGQ-yR-yax" secondAttribute="top" constant="5" id="xm3-19-RPZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="PGQ-yR-yax"/>
-            <point key="canvasLocation" x="-388" y="-279"/>
+            <point key="canvasLocation" x="-632" y="-208"/>
         </view>
     </objects>
 </document>

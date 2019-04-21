@@ -52,18 +52,19 @@ class SearchVC: BaseVC, UITextFieldDelegate {
             let textRange = Range(range, in: text) {
             let updatedText = text.replacingCharacters(in: textRange,
                                                        with: string)
+            self.apiCalling(searchString: updatedText)
             
-            self.arrary = Product.searchByName(str: updatedText)!
-            tblView.reloadData()
+            
         }
         return true
     }
 
     func apiCalling(searchString : String) {
-        LoaderView.displaySpinner()
+       // LoaderView.displaySpinner()
         Manager.loadProductByProductName(productname: searchString) { (result, message) -> (Void) in
-            LoaderView.removeSpinner()
-            
+           // LoaderView.removeSpinner()
+            self.arrary = Product.searchByName(str: searchString)!
+            self.tblView.reloadData()
         }
     }
 

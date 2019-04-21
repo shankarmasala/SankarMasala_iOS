@@ -10,5 +10,7 @@
 #define Header_h
 
 #import "ActionSheetStringPicker.h"
-
+#import "NSDate+Extentsion.h"
+#import "NSManagedObject+Mapping.h"
+#import "NSManagedObject+Duplicate.h"
 #endif /* Header_h */

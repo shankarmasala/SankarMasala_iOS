@@ -139,6 +139,33 @@
 		<key>entityid</key>
 		<string>id</string>
 	</dict>
+	<key>Order</key>
+	<dict>
+		<key>offer_price</key>
+		<string>offer_price</string>
+		<key>img</key>
+		<string>img</string>
+		<key>createdDate</key>
+		<string>createdDate</string>
+		<key>updatedDate</key>
+		<string>updatedDate</string>
+		<key>productName</key>
+		<string>productName</string>
+		<key>productGujratiName</key>
+		<string>productGujratiName</string>
+		<key>size</key>
+		<string>size</string>
+		<key>unit</key>
+		<string>unit</string>
+		<key>itemId</key>
+		<string>itemId</string>
+		<key>product_id</key>
+		<string>product_id</string>
+		<key>product_attribute_id</key>
+		<string>product_attribute_id</string>
+		<key>total_price</key>
+		<string>total_price</string>
+	</dict>
 	<key>Categori</key>
 	<dict>
 		<key>entityid</key>

@@ -25,9 +25,12 @@ class ProductCollectionViewCell: UICollectionViewCell {
         
         lblTitle.text = pro.product_gujarati_name
         lblSubTitle.text = pro.product_name
+        
+        
+//        let min = maxElement(users.map{$0.age}) // 8
+        
         if pro.product_attribute.count > 0 {
-            let attributes =  pro.product_attribute.allObjects
-            let att : ProductAttribute = attributes[0] as! ProductAttribute
+            let att : ProductAttribute = ProductAttribute.smallestPrice(pro: pro)
             lblgm.text = "\(att.weight ?? "") \(att.unit ?? "")"
             lblPrice.text = "RS \(att.selling_price?.intValue ?? 0)"
             lblCutPrice.text = "RS \(att.mrp?.intValue ?? 0)"
@@ -50,6 +53,8 @@ class ProductCollectionViewCell: UICollectionViewCell {
        // let url = URL(string: "http://mywebsitedemo.biz/cakephp/shankarmasala/product/FLAXSEEDS%20ROASTED_image1%20(03-07-2018%2008%2016%2018).jpg")
         //imgView.kf.setImage(with: url)
     }
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

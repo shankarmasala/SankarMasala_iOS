@@ -38,10 +38,10 @@ class PlaceOrderViewController: BaseVC {
         super.viewDidLoad()
         viewCouponCode.isHidden = true
         
-        lblNetAmount.text = "\(Cart.getTotal())"
-        lblShippingCharge.text = ""
+        lblNetAmount.text = "Rs.\(Cart.getTotal())"
+        lblShippingCharge.text = "Rs.\(00)"
         txtViewComment.delegate = self
-        lblTotalAmount.text = "\(Cart.getTotal())"
+        lblTotalAmount.text = "Rs.\(Cart.getTotal())"
         // Do any additional setup after loading the view.
     }
 
@@ -83,12 +83,18 @@ class PlaceOrderViewController: BaseVC {
             dict.amount = "\(Cart.getTotal())"
             dict.phone = dictOrderInfo["PhoneNumber"] as? String ?? ""
             dict.email = dictOrderInfo["EmailId"] as? String ?? ""
-            dict.environment = .test
+            dict.environment = .production
             dict.firstname = dictOrderInfo["FirstName"] as? String ?? ""
             dict.key = "CBg72i"
             dict.merchantid = "5312984"
             dict.hashValue = "gkFdK0QB"
             dict.txnID = "12321"
+            dict.surl = "https://www.payumoney.com/mobileapp/payumoney/success.php"
+            dict.furl = "https://www.payumoney.com/mobileapp/payumoney/failure.php"
+            
+            
+           // String sUrl = "https://www.payumoney.com/mobileapp/payumoney/success.php;;
+          //  String fUrl = "https://www.payumoney.com/mobileapp/payumoney/failure.php;;
             
             PlugNPlay.presentPaymentViewController(withTxnParams: dict, on: self) { (responnse, error, extraParams) in
                 if let error = error{

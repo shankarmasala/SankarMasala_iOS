@@ -14,6 +14,22 @@ class Utils: NSObject {
         }
         return topController!
     }
+    
+    class func getOrderStatus(statusCode : Int) -> String {
+        if statusCode == 0 {
+            return "Pending"
+        }else if statusCode == 1 {
+            return "Completed"
+        }else if statusCode == 2 {
+            return "Decline"
+        }else if statusCode == 3 {
+            return "Cancelled"
+        }else if statusCode == 4 {
+            return "Cancelled by Customer"
+        }
+        return "-"
+    }
+    
     class func getFractionPart(amount : String) -> String {
         let arr = amount.components(separatedBy: ".")
         if arr.count == 1 {

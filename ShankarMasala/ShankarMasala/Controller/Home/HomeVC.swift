@@ -10,6 +10,8 @@ import UIKit
 
 class HomeVC: BaseVC {
 
+    var isChildCategoryPage : Bool = false
+    var category : Categori?
     var arrCategory = [Categori]()
      @IBOutlet var collection: UICollectionView!
     
@@ -19,42 +21,71 @@ class HomeVC: BaseVC {
         return vc
     }
     
+    
+    class func initViewController(child : Bool , cate : Categori) -> HomeVC{
+        let vc = HomeVC(nibName: "HomeVC", bundle: nil)
+        vc.isChildCategoryPage = child
+        vc.category = cate
+        return vc
+    }
+    
     override func viewDidLoad() {
+        if isChildCategoryPage == true {
+            self.title = category?.category_name
+            isBackButton = true
+        }else{
+            isBackButton = false
+            self.title = "HOME"
+        }
         super.viewDidLoad()
-        self.title = "HOME"
+        
+        
         
         initCollectionView()
        
         LoaderView.displaySpinner()
-        Manager.loadAllCategory { (result, message) -> (Void) in
-            LoaderView.removeSpinner()
-            if message.count > 0 {
-                Utils.showAlert(withMessage: message)
-                return
+        if isChildCategoryPage == true {
+            Manager.loadAllCategory { (result, message) -> (Void) in
+                LoaderView.removeSpinner()
+                if message.count > 0 {
+                    Utils.showAlert(withMessage: message)
+                    return
+                }
+                self.arrCategory = Categori.getChildsById(cate: self.category!)!
+                self.collection.reloadData()
+                
             }
-            self.arrCategory = Categori.getAll()!
-            self.collection.reloadData()
-            
+        }else{
+            Manager.loadAllCategory { (result, message) -> (Void) in
+                LoaderView.removeSpinner()
+                if message.count > 0 {
+                    Utils.showAlert(withMessage: message)
+                    return
+                }
+                self.arrCategory = Categori.getParantAll()!
+                self.collection.reloadData()
+                
+            }
         }
         
-        Manager.loadAllProductByCategory { (result, message) -> (Void) in
-           
-//            if message.count > 0 {
-//                Utils.showAlert(withMessage: message)
-//                return
-//            }
-        }
+        
+       
         
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        isBackButton = false
+        if isChildCategoryPage == true {
+            self.title = category?.category_name
+            isBackButton = true
+        }else{
+            isBackButton = false
+            self.title = "HOME"
+        }
         super.viewWillAppear(animated)
-        self.title = "HOME"      
+        //self.title = "HOME"
     }
     
 }
-
 
 
 
@@ -103,8 +134,14 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cat = self.arrCategory[indexPath.row]
-        let vc = ProductVC.initViewController(cat: cat)
-        self.navigationController?.pushViewController(vc, animated: true)
+        if cat.hasChild == 1 {
+            let vc = HomeVC.initViewController(child: true, cate: cat)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+            let vc = ProductVC.initViewController(cat: cat)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
     
 }

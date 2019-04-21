@@ -18,6 +18,7 @@ class ProductDetailVC: BaseVC {
     var selectedQty : Int = 0
     var attribute : ProductAttribute?
     var category : Categori?
+    var arr : [ProductAttribute] = [ProductAttribute]()
     
     let yourViewBorder = CAShapeLayer()
     
@@ -75,16 +76,12 @@ class ProductDetailVC: BaseVC {
         yourViewBorder.path = UIBezierPath(rect: lblSave.bounds).cgPath
         lblSave.layer.addSublayer(yourViewBorder)
         
+        arr = ProductAttribute.sortedArr(pro: product!)
+        let att : ProductAttribute = ProductAttribute.smallestPrice(pro: product!)
+        attribute = att
         tblView.reloadData()
         
-        let attributes = product?.product_attribute.allObjects
-        if let attt = attributes {
-            if attt.count > 0{
-                let att = attt[0]
-                attribute = (att as! ProductAttribute)
-            }
-            
-        }
+        
        
     }
 
@@ -107,10 +104,24 @@ extension ProductDetailVC{
     @IBAction func addToCartClicked() {
         
         Cart.addItem(pro: product!, att: attribute!, qtyy: selectedQty)
-        let c = Cart.getAll()
+     //   let c = Cart.getAll()
 //        print(c)
         
-        Utils.showAlert(withMessage: "Item added to cart successfully....")
+       // Utils.showAlert(withMessage: "Item added to cart successfully....")
+        
+    }
+    
+    @IBAction func readMoreClicked() {
+        let vc = ProductDesciptionVC.initViewController(product: product!)
+        let popupVC = PopupViewController(contentController: vc, popupWidth: 320, popupHeight: 400)
+        popupVC.backgroundAlpha = 0.3
+        popupVC.backgroundColor = .black
+        popupVC.canTapOutsideToDismiss = true
+        popupVC.cornerRadius = 10
+        popupVC.shadowEnabled = true
+        // show it by call present(_ , animated:) method from a current UIViewController
+        present(popupVC, animated: true)
+        
         
     }
     
@@ -138,18 +149,12 @@ extension ProductDetailVC{
 extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (product?.product_attribute.count)! + 1
+        return arr.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0  {
-            let cell : ProductItemTitleCell = tableView.dequeueReusableCell(withIdentifier: "ProductItemTitleCell", for: indexPath) as! ProductItemTitleCell
-            cell.selectionStyle = .none
-            return cell
-        }
         
         let cell : ProductItemCell = tableView.dequeueReusableCell(withIdentifier: "ProductItemCell", for: indexPath) as! ProductItemCell
-        let attributes = product?.product_attribute.allObjects
-        let att : ProductAttribute = attributes![indexPath.row - 1] as! ProductAttribute
+        let att : ProductAttribute = arr[indexPath.row]
         cell.setCellData(att: att)
         cell.btnCheckMark.isSelected = false
         if attribute?.entityid == att.entityid {
@@ -163,7 +168,7 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource{
         cell.btnMinus.tag = indexPath.row
         cell.selectionStyle = .none
         
-        if selectedQty == 0 && indexPath.row == 1{
+        if selectedQty == 0 && indexPath.row == 0{
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 self.selectedCheckmark(btn: cell.btnCheckMark)
             }
@@ -185,7 +190,7 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource{
         let qty : Int = Int((cell.btnTitle.titleLabel?.text)!)!
         let showQty : Int = qty + 1
         cell.btnTitle.setTitle(String(showQty), for: .normal)
-        if let att = product?.product_attribute.allObjects[btn.tag - 1] as? ProductAttribute{
+        if let att = arr[btn.tag] as? ProductAttribute{
             if attribute?.product_id == att.product_id{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     self.selectedCheckmark(btn: cell.btnCheckMark)
@@ -204,7 +209,7 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource{
         let showQty : Int = qty - 1
         cell.btnTitle.setTitle(String(showQty), for: .normal)
         
-        if let att = product?.product_attribute.allObjects[btn.tag - 1] as? ProductAttribute{
+        if let att = arr[btn.tag] as? ProductAttribute{
             if attribute?.product_id == att.product_id{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     self.selectedCheckmark(btn: cell.btnCheckMark)
@@ -218,9 +223,9 @@ extension ProductDetailVC: UITableViewDelegate, UITableViewDataSource{
         let cell : ProductItemCell = tblView.cellForRow(at: NSIndexPath(row: btn.tag, section: 0) as IndexPath) as! ProductItemCell
         let qty : Int = Int((cell.btnTitle.titleLabel?.text)!)!
         selectedQty = qty
-        let attributes = product?.product_attribute.allObjects
-        let att = attributes![btn.tag - 1]
-        attribute = (att as! ProductAttribute)
+        let attributes = arr
+        let att = attributes[btn.tag]
+        attribute = att
         print((attribute!.mrp!.intValue - attribute!.selling_price!.intValue) * selectedQty)
         
         lblSave.text = "You saved Rs. \((attribute!.mrp!.intValue - attribute!.selling_price!.intValue) * selectedQty)"
